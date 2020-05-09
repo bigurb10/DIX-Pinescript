@@ -1,0 +1,2408 @@
+//@version=3
+study(title="SPX DIX", shorttitle="DIX", overlay=true, scale=scale.left, precision=4)
+
+//Year & Month
+may11 = (year == 2011) and (month == 5)
+jun11 = (year == 2011) and (month == 6)
+jul11 = (year == 2011) and (month == 7)
+aug11 = (year == 2011) and (month == 8)
+sep11 = (year == 2011) and (month == 9)
+oct11 = (year == 2011) and (month == 10)
+nov11 = (year == 2011) and (month == 11)
+dec11 = (year == 2011) and (month == 12)
+jan12 = (year == 2012) and (month == 1)
+feb12 = (year == 2012) and (month == 2)
+mar12 = (year == 2012) and (month == 3)
+apr12 = (year == 2012) and (month == 4)
+may12 = (year == 2012) and (month == 5)
+jun12 = (year == 2012) and (month == 6)
+jul12 = (year == 2012) and (month == 7)
+aug12 = (year == 2012) and (month == 8)
+sep12 = (year == 2012) and (month == 9)
+oct12 = (year == 2012) and (month == 10)
+nov12 = (year == 2012) and (month == 11)
+dec12 = (year == 2012) and (month == 12)
+jan13 = (year == 2013) and (month == 1)
+feb13 = (year == 2013) and (month == 2)
+mar13 = (year == 2013) and (month == 3)
+apr13 = (year == 2013) and (month == 4)
+may13 = (year == 2013) and (month == 5)
+jun13 = (year == 2013) and (month == 6)
+jul13 = (year == 2013) and (month == 7)
+aug13 = (year == 2013) and (month == 8)
+sep13 = (year == 2013) and (month == 9)
+oct13 = (year == 2013) and (month == 10)
+nov13 = (year == 2013) and (month == 11)
+dec13 = (year == 2013) and (month == 12)
+jan14 = (year == 2014) and (month == 1)
+feb14 = (year == 2014) and (month == 2)
+mar14 = (year == 2014) and (month == 3)
+apr14 = (year == 2014) and (month == 4)
+may14 = (year == 2014) and (month == 5)
+jun14 = (year == 2014) and (month == 6)
+jul14 = (year == 2014) and (month == 7)
+aug14 = (year == 2014) and (month == 8)
+sep14 = (year == 2014) and (month == 9)
+oct14 = (year == 2014) and (month == 10)
+nov14 = (year == 2014) and (month == 11)
+dec14 = (year == 2014) and (month == 12)
+jan15 = (year == 2015) and (month == 1)
+feb15 = (year == 2015) and (month == 2)
+mar15 = (year == 2015) and (month == 3)
+apr15 = (year == 2015) and (month == 4)
+may15 = (year == 2015) and (month == 5)
+jun15 = (year == 2015) and (month == 6)
+jul15 = (year == 2015) and (month == 7)
+aug15 = (year == 2015) and (month == 8)
+sep15 = (year == 2015) and (month == 9)
+oct15 = (year == 2015) and (month == 10)
+nov15 = (year == 2015) and (month == 11)
+dec15 = (year == 2015) and (month == 12)
+jan16 = (year == 2016) and (month == 1)
+feb16 = (year == 2016) and (month == 2)
+mar16 = (year == 2016) and (month == 3)
+apr16 = (year == 2016) and (month == 4)
+may16 = (year == 2016) and (month == 5)
+jun16 = (year == 2016) and (month == 6)
+jul16 = (year == 2016) and (month == 7)
+aug16 = (year == 2016) and (month == 8)
+sep16 = (year == 2016) and (month == 9)
+oct16 = (year == 2016) and (month == 10)
+nov16 = (year == 2016) and (month == 11)
+dec16 = (year == 2016) and (month == 12)
+jan17 = (year == 2017) and (month == 1)
+feb17 = (year == 2017) and (month == 2)
+mar17 = (year == 2017) and (month == 3)
+apr17 = (year == 2017) and (month == 4)
+may17 = (year == 2017) and (month == 5)
+jun17 = (year == 2017) and (month == 6)
+jul17 = (year == 2017) and (month == 7)
+aug17 = (year == 2017) and (month == 8)
+sep17 = (year == 2017) and (month == 9)
+oct17 = (year == 2017) and (month == 10)
+nov17 = (year == 2017) and (month == 11)
+dec17 = (year == 2017) and (month == 12)
+jan18 = (year == 2018) and (month == 1)
+feb18 = (year == 2018) and (month == 2)
+mar18 = (year == 2018) and (month == 3)
+apr18 = (year == 2018) and (month == 4)
+may18 = (year == 2018) and (month == 5)
+jun18 = (year == 2018) and (month == 6)
+jul18 = (year == 2018) and (month == 7)
+aug18 = (year == 2018) and (month == 8)
+sep18 = (year == 2018) and (month == 9)
+oct18 = (year == 2018) and (month == 10)
+nov18 = (year == 2018) and (month == 11)
+dec18 = (year == 2018) and (month == 12)
+jan19 = (year == 2019) and (month == 1)
+feb19 = (year == 2019) and (month == 2)
+mar19 = (year == 2019) and (month == 3)
+apr19 = (year == 2019) and (month == 4)
+may19 = (year == 2019) and (month == 5)
+jun19 = (year == 2019) and (month == 6)
+jul19 = (year == 2019) and (month == 7)
+aug19 = (year == 2019) and (month == 8)
+sep19 = (year == 2019) and (month == 9)
+oct19 = (year == 2019) and (month == 10)
+nov19 = (year == 2019) and (month == 11)
+dec19 = (year == 2019) and (month == 12)
+jan20 = (year == 2020) and (month == 1)
+feb20 = (year == 2020) and (month == 2)
+mar20 = (year == 2020) and (month == 3)
+apr20 = (year == 2020) and (month == 4)
+may20 = (year == 2020) and (month == 5)
+jun20 = (year == 2020) and (month == 6)
+jul20 = (year == 2020) and (month == 7)
+aug20 = (year == 2020) and (month == 8)
+sep20 = (year == 2020) and (month == 9)
+oct20 = (year == 2020) and (month == 10)
+nov20 = (year == 2020) and (month == 11)
+dec20 = (year == 2020) and (month == 12)
+
+//Actual plots of DIX
+plotValue = 
+    //  may11 and (dayofmonth == 2) ?  0.378842099 :
+    //  may11 and (dayofmonth == 3) ?  0.38341108 :
+    //  may11 and (dayofmonth == 4) ?  0.39212179999999996 :
+    //  may11 and (dayofmonth == 5) ?  0.40545702 :
+    //  may11 and (dayofmonth == 6) ?  0.418648665 :
+    //  may11 and (dayofmonth == 9) ?  0.41032050299999995 :
+    //  may11 and (dayofmonth == 10) ?  0.39285142700000003 :
+    //  may11 and (dayofmonth == 11) ?  0.40081409799999995 :
+    //  may11 and (dayofmonth == 12) ?  0.387533995 :
+    //  may11 and (dayofmonth == 13) ?  0.40559519200000005 :
+    //  may11 and (dayofmonth == 16) ?  0.389702744 :
+    //  may11 and (dayofmonth == 17) ?  0.39474683200000005 :
+    //  may11 and (dayofmonth == 18) ?  0.402330225 :
+    //  may11 and (dayofmonth == 19) ?  0.39463420299999996 :
+    //  may11 and (dayofmonth == 20) ?  0.413201616 :
+    //  may11 and (dayofmonth == 23) ?  0.40584655700000005 :
+    //  may11 and (dayofmonth == 24) ?  0.389380348 :
+    //  may11 and (dayofmonth == 25) ?  0.39729069 :
+    //  may11 and (dayofmonth == 26) ?  0.397655976 :
+    //  may11 and (dayofmonth == 27) ?  0.40093531 :
+    //  may11 and (dayofmonth == 31) ?  0.402477407 :
+    //  jun11 and (dayofmonth == 1) ?  0.441581815 :
+    //  jun11 and (dayofmonth == 2) ?  0.41306995399999996 :
+    //  jun11 and (dayofmonth == 3) ?  0.436109719 :
+    //  jun11 and (dayofmonth == 6) ?  0.40014712799999996 :
+    //  jun11 and (dayofmonth == 7) ?  0.406773926 :
+    //  jun11 and (dayofmonth == 8) ?  0.40458124 :
+    //  jun11 and (dayofmonth == 9) ?  0.414450695 :
+    //  jun11 and (dayofmonth == 10) ?  0.436125527 :
+    //  jun11 and (dayofmonth == 13) ?  0.40885086 :
+    //  jun11 and (dayofmonth == 14) ?  0.426970319 :
+    //  jun11 and (dayofmonth == 15) ?  0.430259748 :
+    //  jun11 and (dayofmonth == 16) ?  0.38797496299999995 :
+    //  jun11 and (dayofmonth == 17) ?  0.40896769200000005 :
+    //  jun11 and (dayofmonth == 20) ?  0.37137759200000003 :
+    //  jun11 and (dayofmonth == 21) ?  0.423486175 :
+    //  jun11 and (dayofmonth == 22) ?  0.44720989299999997 :
+    //  jun11 and (dayofmonth == 23) ?  0.446167418 :
+    //  jun11 and (dayofmonth == 24) ?  0.447477568 :
+    //  jun11 and (dayofmonth == 27) ?  0.422968726 :
+    //  jun11 and (dayofmonth == 28) ?  0.434609154 :
+    //  jun11 and (dayofmonth == 29) ?  0.41914064 :
+    //  jun11 and (dayofmonth == 30) ?  0.41193311 :
+    //  jul11 and (dayofmonth == 1) ?  0.414437072 :
+    //  jul11 and (dayofmonth == 5) ?  0.418297491 :
+    //  jul11 and (dayofmonth == 6) ?  0.42951298200000004 :
+    //  jul11 and (dayofmonth == 7) ?  0.41619835899999996 :
+    //  jul11 and (dayofmonth == 8) ?  0.43962650000000003 :
+    //  jul11 and (dayofmonth == 11) ?  0.42768143700000005 :
+    //  jul11 and (dayofmonth == 12) ?  0.428388198 :
+    //  jul11 and (dayofmonth == 13) ?  0.42802034 :
+    //  jul11 and (dayofmonth == 14) ?  0.433802921 :
+    //  jul11 and (dayofmonth == 15) ?  0.426378352 :
+    //  jul11 and (dayofmonth == 18) ?  0.41624754700000005 :
+    //  jul11 and (dayofmonth == 19) ?  0.41034517299999995 :
+    //  jul11 and (dayofmonth == 20) ?  0.439684736 :
+    //  jul11 and (dayofmonth == 21) ?  0.42232637 :
+    //  jul11 and (dayofmonth == 22) ?  0.445173324 :
+    //  jul11 and (dayofmonth == 25) ?  0.444488726 :
+    //  jul11 and (dayofmonth == 26) ?  0.421529934 :
+    //  jul11 and (dayofmonth == 27) ?  0.41801219799999995 :
+    //  jul11 and (dayofmonth == 28) ?  0.408520001 :
+    //  jul11 and (dayofmonth == 29) ?  0.40360837 :
+    //  aug11 and (dayofmonth == 1) ?  0.44030993399999996 :
+    //  aug11 and (dayofmonth == 2) ?  0.441316163 :
+    //  aug11 and (dayofmonth == 3) ?  0.431168961 :
+    //  aug11 and (dayofmonth == 4) ?  0.429702315 :
+    //  aug11 and (dayofmonth == 5) ?  0.42131872200000003 :
+    //  aug11 and (dayofmonth == 8) ?  0.42279110299999995 :
+    //  aug11 and (dayofmonth == 9) ?  0.419587084 :
+    //  aug11 and (dayofmonth == 10) ?  0.46485704899999997 :
+    //  aug11 and (dayofmonth == 11) ?  0.427854096 :
+    //  aug11 and (dayofmonth == 12) ?  0.456990381 :
+    //  aug11 and (dayofmonth == 15) ?  0.46463638 :
+    //  aug11 and (dayofmonth == 16) ?  0.46907932799999996 :
+    //  aug11 and (dayofmonth == 17) ?  0.482254151 :
+    //  aug11 and (dayofmonth == 18) ?  0.462807642 :
+    //  aug11 and (dayofmonth == 19) ?  0.45859282799999995 :
+    //  aug11 and (dayofmonth == 22) ?  0.448567228 :
+    //  aug11 and (dayofmonth == 23) ?  0.461559084 :
+    //  aug11 and (dayofmonth == 24) ?  0.479698402 :
+    //  aug11 and (dayofmonth == 25) ?  0.488769064 :
+    //  aug11 and (dayofmonth == 26) ?  0.479699008 :
+    //  aug11 and (dayofmonth == 29) ?  0.48106422 :
+    //  aug11 and (dayofmonth == 30) ?  0.47834292700000003 :
+    //  aug11 and (dayofmonth == 31) ?  0.460570921 :
+    //  sep11 and (dayofmonth == 1) ?  0.487540669 :
+    //  sep11 and (dayofmonth == 2) ?  0.494089934 :
+    //  sep11 and (dayofmonth == 6) ?  0.5032550689999999 :
+    //  sep11 and (dayofmonth == 7) ?  0.46361806200000005 :
+    //  sep11 and (dayofmonth == 8) ?  0.473642392 :
+    //  sep11 and (dayofmonth == 9) ?  0.5004884270000001 :
+    //  sep11 and (dayofmonth == 12) ?  0.46909509200000005 :
+    //  sep11 and (dayofmonth == 13) ?  0.483554346 :
+    //  sep11 and (dayofmonth == 14) ?  0.46705869899999997 :
+    //  sep11 and (dayofmonth == 15) ?  0.445066086 :
+    //  sep11 and (dayofmonth == 16) ?  0.47480359899999997 :
+    //  sep11 and (dayofmonth == 19) ?  0.47153249399999997 :
+    //  sep11 and (dayofmonth == 20) ?  0.460587997 :
+    //  sep11 and (dayofmonth == 21) ?  0.448700174 :
+    //  sep11 and (dayofmonth == 22) ?  0.481429038 :
+    //  sep11 and (dayofmonth == 23) ?  0.457091477 :
+    //  sep11 and (dayofmonth == 26) ?  0.45660848600000004 :
+    //  sep11 and (dayofmonth == 27) ?  0.449152199 :
+    //  sep11 and (dayofmonth == 28) ?  0.48384898600000004 :
+    //  sep11 and (dayofmonth == 29) ?  0.451186941 :
+    //  sep11 and (dayofmonth == 30) ?  0.475506663 :
+    //  oct11 and (dayofmonth == 3) ?  0.480298014 :
+    //  oct11 and (dayofmonth == 4) ?  0.462602226 :
+    //  oct11 and (dayofmonth == 5) ?  0.48463006399999997 :
+    //  oct11 and (dayofmonth == 6) ?  0.481191663 :
+    //  oct11 and (dayofmonth == 7) ?  0.47711105600000003 :
+    //  oct11 and (dayofmonth == 10) ?  0.44747794799999996 :
+    //  oct11 and (dayofmonth == 11) ?  0.475650611 :
+    //  oct11 and (dayofmonth == 12) ?  0.47181299600000004 :
+    //  oct11 and (dayofmonth == 13) ?  0.496293143 :
+    //  oct11 and (dayofmonth == 14) ?  0.456942523 :
+    //  oct11 and (dayofmonth == 17) ?  0.491524808 :
+    //  oct11 and (dayofmonth == 18) ?  0.46054914799999996 :
+    //  oct11 and (dayofmonth == 19) ?  0.471040535 :
+    //  oct11 and (dayofmonth == 20) ?  0.480243155 :
+    //  oct11 and (dayofmonth == 21) ?  0.448862054 :
+    //  oct11 and (dayofmonth == 24) ?  0.428410051 :
+    //  oct11 and (dayofmonth == 25) ?  0.44638268 :
+    //  oct11 and (dayofmonth == 26) ?  0.42391454 :
+    //  oct11 and (dayofmonth == 27) ?  0.39706426799999994 :
+    //  oct11 and (dayofmonth == 28) ?  0.43294202 :
+    //  oct11 and (dayofmonth == 31) ?  0.445037015 :
+    //  nov11 and (dayofmonth == 1) ?  0.45484798200000004 :
+    //  nov11 and (dayofmonth == 2) ?  0.450534427 :
+    //  nov11 and (dayofmonth == 3) ?  0.44365225 :
+    //  nov11 and (dayofmonth == 4) ?  0.46846673899999997 :
+    //  nov11 and (dayofmonth == 7) ?  0.445331893 :
+    //  nov11 and (dayofmonth == 8) ?  0.426426666 :
+    //  nov11 and (dayofmonth == 9) ?  0.482996408 :
+    //  nov11 and (dayofmonth == 10) ?  0.42235354 :
+    //  nov11 and (dayofmonth == 11) ?  0.423077624 :
+    //  nov11 and (dayofmonth == 14) ?  0.453277241 :
+    //  nov11 and (dayofmonth == 15) ?  0.43622773299999995 :
+    //  nov11 and (dayofmonth == 16) ?  0.461607981 :
+    //  nov11 and (dayofmonth == 17) ?  0.46908686299999997 :
+    //  nov11 and (dayofmonth == 18) ?  0.455749012 :
+    //  nov11 and (dayofmonth == 21) ?  0.450129026 :
+    //  nov11 and (dayofmonth == 22) ?  0.467619484 :
+    //  nov11 and (dayofmonth == 23) ?  0.46527888799999995 :
+    //  nov11 and (dayofmonth == 25) ?  0.470870269 :
+    //  nov11 and (dayofmonth == 28) ?  0.46061204 :
+    //  nov11 and (dayofmonth == 29) ?  0.44960254299999997 :
+    //  nov11 and (dayofmonth == 30) ?  0.40289277 :
+    //  dec11 and (dayofmonth == 1) ?  0.438849579 :
+    //  dec11 and (dayofmonth == 2) ?  0.427454365 :
+    //  dec11 and (dayofmonth == 5) ?  0.43415457399999996 :
+    //  dec11 and (dayofmonth == 6) ?  0.435047155 :
+    //  dec11 and (dayofmonth == 7) ?  0.4419741 :
+    //  dec11 and (dayofmonth == 8) ?  0.47557764399999997 :
+    //  dec11 and (dayofmonth == 9) ?  0.440305541 :
+    //  dec11 and (dayofmonth == 12) ?  0.495128953 :
+    //  dec11 and (dayofmonth == 13) ?  0.45817134200000004 :
+    //  dec11 and (dayofmonth == 14) ?  0.439287721 :
+    //  dec11 and (dayofmonth == 15) ?  0.42744287200000003 :
+    //  dec11 and (dayofmonth == 16) ?  0.455177073 :
+    //  dec11 and (dayofmonth == 19) ?  0.449236784 :
+    //  dec11 and (dayofmonth == 20) ?  0.405726452 :
+    //  dec11 and (dayofmonth == 21) ?  0.428636389 :
+    //  dec11 and (dayofmonth == 22) ?  0.4316862 :
+    //  dec11 and (dayofmonth == 23) ?  0.429020877 :
+    //  dec11 and (dayofmonth == 27) ?  0.435375215 :
+    //  dec11 and (dayofmonth == 28) ?  0.454748361 :
+    //  dec11 and (dayofmonth == 29) ?  0.440780529 :
+    //  dec11 and (dayofmonth == 30) ?  0.429171329 :
+    //  jan12 and (dayofmonth == 3) ?  0.411853455 :
+    //  jan12 and (dayofmonth == 4) ?  0.456286253 :
+    //  jan12 and (dayofmonth == 5) ?  0.459538324 :
+    //  jan12 and (dayofmonth == 6) ?  0.455721589 :
+    //  jan12 and (dayofmonth == 9) ?  0.443140449 :
+    //  jan12 and (dayofmonth == 10) ?  0.420540829 :
+    //  jan12 and (dayofmonth == 11) ?  0.44476812 :
+    //  jan12 and (dayofmonth == 12) ?  0.453079734 :
+    //  jan12 and (dayofmonth == 13) ?  0.45714121799999996 :
+    //  jan12 and (dayofmonth == 17) ?  0.422817493 :
+    //  jan12 and (dayofmonth == 18) ?  0.437660603 :
+    //  jan12 and (dayofmonth == 19) ?  0.44114320100000004 :
+    //  jan12 and (dayofmonth == 20) ?  0.438470229 :
+    //  jan12 and (dayofmonth == 23) ?  0.42440613200000005 :
+    //  jan12 and (dayofmonth == 24) ?  0.42780863399999997 :
+    //  jan12 and (dayofmonth == 25) ?  0.416994023 :
+    //  jan12 and (dayofmonth == 26) ?  0.422394072 :
+    //  jan12 and (dayofmonth == 27) ?  0.43131585299999997 :
+    //  jan12 and (dayofmonth == 30) ?  0.46547017700000004 :
+    //  jan12 and (dayofmonth == 31) ?  0.451847259 :
+    //  feb12 and (dayofmonth == 1) ?  0.41972071899999996 :
+    //  feb12 and (dayofmonth == 2) ?  0.432154839 :
+    //  feb12 and (dayofmonth == 3) ?  0.41576431399999997 :
+    //  feb12 and (dayofmonth == 6) ?  0.436427334 :
+    //  feb12 and (dayofmonth == 7) ?  0.443991818 :
+    //  feb12 and (dayofmonth == 8) ?  0.439762169 :
+    //  feb12 and (dayofmonth == 9) ?  0.433544848 :
+    //  feb12 and (dayofmonth == 10) ?  0.454488035 :
+    //  feb12 and (dayofmonth == 13) ?  0.435652483 :
+    //  feb12 and (dayofmonth == 14) ?  0.43687051 :
+    //  feb12 and (dayofmonth == 15) ?  0.42288139 :
+    //  feb12 and (dayofmonth == 16) ?  0.403360978 :
+    //  feb12 and (dayofmonth == 17) ?  0.413584361 :
+    //  feb12 and (dayofmonth == 21) ?  0.42247838200000004 :
+    //  feb12 and (dayofmonth == 22) ?  0.42099281 :
+    //  feb12 and (dayofmonth == 23) ?  0.41321296399999996 :
+    //  feb12 and (dayofmonth == 24) ?  0.431161465 :
+    //  feb12 and (dayofmonth == 27) ?  0.43885703200000004 :
+    //  feb12 and (dayofmonth == 28) ?  0.4203273 :
+    //  feb12 and (dayofmonth == 29) ?  0.456480825 :
+    //  mar12 and (dayofmonth == 1) ?  0.460734142 :
+    //  mar12 and (dayofmonth == 2) ?  0.451729676 :
+    //  mar12 and (dayofmonth == 5) ?  0.438912354 :
+    //  mar12 and (dayofmonth == 6) ?  0.432709392 :
+    //  mar12 and (dayofmonth == 7) ?  0.46486277299999995 :
+    //  mar12 and (dayofmonth == 8) ?  0.441270376 :
+    //  mar12 and (dayofmonth == 9) ?  0.457583846 :
+    //  mar12 and (dayofmonth == 12) ?  0.462077742 :
+    //  mar12 and (dayofmonth == 13) ?  0.442057996 :
+    //  mar12 and (dayofmonth == 14) ?  0.45186579999999993 :
+    //  mar12 and (dayofmonth == 15) ?  0.45955109 :
+    //  mar12 and (dayofmonth == 16) ?  0.45746992 :
+    //  mar12 and (dayofmonth == 19) ?  0.41998336299999994 :
+    //  mar12 and (dayofmonth == 20) ?  0.41800761700000005 :
+    //  mar12 and (dayofmonth == 21) ?  0.435422065 :
+    //  mar12 and (dayofmonth == 22) ?  0.433343751 :
+    //  mar12 and (dayofmonth == 23) ?  0.43294352799999997 :
+    //  mar12 and (dayofmonth == 26) ?  0.42207775200000003 :
+    //  mar12 and (dayofmonth == 27) ?  0.42578729200000004 :
+    //  mar12 and (dayofmonth == 28) ?  0.446510754 :
+    //  mar12 and (dayofmonth == 29) ?  0.457585048 :
+    //  mar12 and (dayofmonth == 30) ?  0.42363428799999997 :
+    //  apr12 and (dayofmonth == 2) ?  0.41936940000000006 :
+    //  apr12 and (dayofmonth == 3) ?  0.446404921 :
+    //  apr12 and (dayofmonth == 4) ?  0.446128421 :
+    //  apr12 and (dayofmonth == 5) ?  0.44018344200000004 :
+    //  apr12 and (dayofmonth == 9) ?  0.44214085200000003 :
+    //  apr12 and (dayofmonth == 10) ?  0.44856305399999996 :
+    //  apr12 and (dayofmonth == 11) ?  0.464257559 :
+    //  apr12 and (dayofmonth == 12) ?  0.44333917899999997 :
+    //  apr12 and (dayofmonth == 13) ?  0.445217761 :
+    //  apr12 and (dayofmonth == 16) ?  0.402919908 :
+    //  apr12 and (dayofmonth == 17) ?  0.428623496 :
+    //  apr12 and (dayofmonth == 18) ?  0.4371225 :
+    //  apr12 and (dayofmonth == 19) ?  0.43635490299999996 :
+    //  apr12 and (dayofmonth == 20) ?  0.397271511 :
+    //  apr12 and (dayofmonth == 23) ?  0.425107543 :
+    //  apr12 and (dayofmonth == 24) ?  0.39624532100000004 :
+    //  apr12 and (dayofmonth == 25) ?  0.431299042 :
+    //  apr12 and (dayofmonth == 26) ?  0.440532015 :
+    //  apr12 and (dayofmonth == 27) ?  0.430271156 :
+    //  apr12 and (dayofmonth == 30) ?  0.426573934 :
+    //  may12 and (dayofmonth == 1) ?  0.42665716600000003 :
+    //  may12 and (dayofmonth == 2) ?  0.449407761 :
+    //  may12 and (dayofmonth == 3) ?  0.44065655200000003 :
+    //  may12 and (dayofmonth == 4) ?  0.43768809399999997 :
+    //  may12 and (dayofmonth == 7) ?  0.42344966700000003 :
+    //  may12 and (dayofmonth == 8) ?  0.45611588399999997 :
+    //  may12 and (dayofmonth == 9) ?  0.452375884 :
+    //  may12 and (dayofmonth == 10) ?  0.43934235200000005 :
+    //  may12 and (dayofmonth == 11) ?  0.432141801 :
+    //  may12 and (dayofmonth == 14) ?  0.42175248299999996 :
+    //  may12 and (dayofmonth == 15) ?  0.459140055 :
+    //  may12 and (dayofmonth == 16) ?  0.436529127 :
+    //  may12 and (dayofmonth == 17) ?  0.41579924100000004 :
+    //  may12 and (dayofmonth == 18) ?  0.44072153399999997 :
+    //  may12 and (dayofmonth == 21) ?  0.445945362 :
+    //  may12 and (dayofmonth == 22) ?  0.457411629 :
+    //  may12 and (dayofmonth == 23) ?  0.463389227 :
+    //  may12 and (dayofmonth == 24) ?  0.462337076 :
+    //  may12 and (dayofmonth == 25) ?  0.445284396 :
+    //  may12 and (dayofmonth == 29) ?  0.43982662299999997 :
+    //  may12 and (dayofmonth == 30) ?  0.468596491 :
+    //  may12 and (dayofmonth == 31) ?  0.468427965 :
+    //  jun12 and (dayofmonth == 1) ?  0.46881559100000003 :
+    //  jun12 and (dayofmonth == 4) ?  0.432496989 :
+    //  jun12 and (dayofmonth == 5) ?  0.459361236 :
+    //  jun12 and (dayofmonth == 6) ?  0.438660675 :
+    //  jun12 and (dayofmonth == 7) ?  0.43646768700000005 :
+    //  jun12 and (dayofmonth == 8) ?  0.45591701700000004 :
+    //  jun12 and (dayofmonth == 11) ?  0.481044704 :
+    //  jun12 and (dayofmonth == 12) ?  0.46845044799999996 :
+    //  jun12 and (dayofmonth == 13) ?  0.493658776 :
+    //  jun12 and (dayofmonth == 14) ?  0.457117961 :
+    //  jun12 and (dayofmonth == 15) ?  0.42704316700000006 :
+    //  jun12 and (dayofmonth == 18) ?  0.436562891 :
+    //  jun12 and (dayofmonth == 19) ?  0.436885852 :
+    //  jun12 and (dayofmonth == 20) ?  0.42388493899999996 :
+    //  jun12 and (dayofmonth == 21) ?  0.45230111700000003 :
+    //  jun12 and (dayofmonth == 22) ?  0.450756703 :
+    //  jun12 and (dayofmonth == 25) ?  0.441823368 :
+    //  jun12 and (dayofmonth == 26) ?  0.448756455 :
+    //  jun12 and (dayofmonth == 27) ?  0.42664900299999997 :
+    //  jun12 and (dayofmonth == 28) ?  0.440783954 :
+    //  jun12 and (dayofmonth == 29) ?  0.41323797700000003 :
+    //  jul12 and (dayofmonth == 2) ?  0.41260613 :
+    //  jul12 and (dayofmonth == 3) ?  0.390983426 :
+    //  jul12 and (dayofmonth == 5) ?  0.426481375 :
+    //  jul12 and (dayofmonth == 6) ?  0.43607710899999996 :
+    //  jul12 and (dayofmonth == 9) ?  0.420280883 :
+    //  jul12 and (dayofmonth == 10) ?  0.442497694 :
+    //  jul12 and (dayofmonth == 11) ?  0.42072268399999996 :
+    //  jul12 and (dayofmonth == 12) ?  0.43242149 :
+    //  jul12 and (dayofmonth == 13) ?  0.440963266 :
+    //  jul12 and (dayofmonth == 16) ?  0.43627448700000004 :
+    //  jul12 and (dayofmonth == 17) ?  0.451430094 :
+    //  jul12 and (dayofmonth == 18) ?  0.43662668299999996 :
+    //  jul12 and (dayofmonth == 19) ?  0.441872417 :
+    //  jul12 and (dayofmonth == 20) ?  0.464460912 :
+    //  jul12 and (dayofmonth == 23) ?  0.44321910600000003 :
+    //  jul12 and (dayofmonth == 24) ?  0.43107230700000004 :
+    //  jul12 and (dayofmonth == 25) ?  0.430702935 :
+    //  jul12 and (dayofmonth == 26) ?  0.421724382 :
+    //  jul12 and (dayofmonth == 27) ?  0.42471418299999997 :
+    //  jul12 and (dayofmonth == 30) ?  0.42843743 :
+    //  jul12 and (dayofmonth == 31) ?  0.42853449600000004 :
+    //  aug12 and (dayofmonth == 1) ?  0.45785883899999996 :
+    //  aug12 and (dayofmonth == 2) ?  0.464333809 :
+    //  aug12 and (dayofmonth == 3) ?  0.39010512 :
+    //  aug12 and (dayofmonth == 6) ?  0.423803255 :
+    //  aug12 and (dayofmonth == 7) ?  0.411675816 :
+    //  aug12 and (dayofmonth == 8) ?  0.426888444 :
+    //  aug12 and (dayofmonth == 9) ?  0.43939495799999995 :
+    //  aug12 and (dayofmonth == 10) ?  0.428783068 :
+    //  aug12 and (dayofmonth == 13) ?  0.44649140200000004 :
+    //  aug12 and (dayofmonth == 14) ?  0.42919489299999997 :
+    //  aug12 and (dayofmonth == 15) ?  0.432183217 :
+    //  aug12 and (dayofmonth == 16) ?  0.426202142 :
+    //  aug12 and (dayofmonth == 17) ?  0.398142173 :
+    //  aug12 and (dayofmonth == 20) ?  0.413355168 :
+    //  aug12 and (dayofmonth == 21) ?  0.418816398 :
+    //  aug12 and (dayofmonth == 22) ?  0.408271923 :
+    //  aug12 and (dayofmonth == 23) ?  0.433467765 :
+    //  aug12 and (dayofmonth == 24) ?  0.412609669 :
+    //  aug12 and (dayofmonth == 27) ?  0.438513389 :
+    //  aug12 and (dayofmonth == 28) ?  0.4472684 :
+    //  aug12 and (dayofmonth == 29) ?  0.448131541 :
+    //  aug12 and (dayofmonth == 30) ?  0.451028754 :
+    //  aug12 and (dayofmonth == 31) ?  0.44626046 :
+    //  sep12 and (dayofmonth == 4) ?  0.44582830100000004 :
+    //  sep12 and (dayofmonth == 5) ?  0.450946787 :
+    //  sep12 and (dayofmonth == 6) ?  0.421909518 :
+    //  sep12 and (dayofmonth == 7) ?  0.420361162 :
+    //  sep12 and (dayofmonth == 10) ?  0.39850468 :
+    //  sep12 and (dayofmonth == 11) ?  0.383374847 :
+    //  sep12 and (dayofmonth == 12) ?  0.400705097 :
+    //  sep12 and (dayofmonth == 13) ?  0.391469653 :
+    //  sep12 and (dayofmonth == 14) ?  0.396847554 :
+    //  sep12 and (dayofmonth == 17) ?  0.365391474 :
+    //  sep12 and (dayofmonth == 18) ?  0.391424471 :
+    //  sep12 and (dayofmonth == 19) ?  0.41800580600000004 :
+    //  sep12 and (dayofmonth == 20) ?  0.399077405 :
+    //  sep12 and (dayofmonth == 21) ?  0.39721676200000006 :
+    //  sep12 and (dayofmonth == 24) ?  0.39388369100000004 :
+    //  sep12 and (dayofmonth == 25) ?  0.383623414 :
+    //  sep12 and (dayofmonth == 26) ?  0.363140164 :
+    //  sep12 and (dayofmonth == 27) ?  0.379371729 :
+    //  sep12 and (dayofmonth == 28) ?  0.416806076 :
+    //  oct12 and (dayofmonth == 1) ?  0.34432836299999997 :
+    //  oct12 and (dayofmonth == 2) ?  0.35035017700000004 :
+    //  oct12 and (dayofmonth == 3) ?  0.380016048 :
+    //  oct12 and (dayofmonth == 4) ?  0.378389136 :
+    //  oct12 and (dayofmonth == 5) ?  0.342700141 :
+    //  oct12 and (dayofmonth == 8) ?  0.337064299 :
+    //  oct12 and (dayofmonth == 9) ?  0.33728642200000003 :
+    //  oct12 and (dayofmonth == 10) ?  0.381649494 :
+    //  oct12 and (dayofmonth == 11) ?  0.365228725 :
+    //  oct12 and (dayofmonth == 12) ?  0.366631872 :
+    //  oct12 and (dayofmonth == 15) ?  0.41118097600000003 :
+    //  oct12 and (dayofmonth == 16) ?  0.416879436 :
+    //  oct12 and (dayofmonth == 17) ?  0.41781850299999995 :
+    //  oct12 and (dayofmonth == 18) ?  0.399641532 :
+    //  oct12 and (dayofmonth == 19) ?  0.40305387200000004 :
+    //  oct12 and (dayofmonth == 22) ?  0.39574061200000005 :
+    //  oct12 and (dayofmonth == 23) ?  0.40410996899999996 :
+    //  oct12 and (dayofmonth == 24) ?  0.39261566700000006 :
+    //  oct12 and (dayofmonth == 25) ?  0.390722067 :
+    //  oct12 and (dayofmonth == 26) ?  0.397319071 :
+    //  oct12 and (dayofmonth == 31) ?  0.40001722100000003 :
+    //  nov12 and (dayofmonth == 1) ?  0.38098579200000005 :
+    //  nov12 and (dayofmonth == 2) ?  0.388379188 :
+    //  nov12 and (dayofmonth == 5) ?  0.392869034 :
+    //  nov12 and (dayofmonth == 6) ?  0.38989247299999996 :
+    //  nov12 and (dayofmonth == 7) ?  0.391995173 :
+    //  nov12 and (dayofmonth == 8) ?  0.35613295799999994 :
+    //  nov12 and (dayofmonth == 9) ?  0.382497814 :
+    //  nov12 and (dayofmonth == 12) ?  0.414913835 :
+    //  nov12 and (dayofmonth == 13) ?  0.38963545200000005 :
+    //  nov12 and (dayofmonth == 14) ?  0.395428264 :
+    //  nov12 and (dayofmonth == 15) ?  0.366305334 :
+    //  nov12 and (dayofmonth == 16) ?  0.377838216 :
+    //  nov12 and (dayofmonth == 19) ?  0.44302948799999997 :
+    //  nov12 and (dayofmonth == 20) ?  0.43152473399999997 :
+    //  nov12 and (dayofmonth == 21) ?  0.39954976299999995 :
+    //  nov12 and (dayofmonth == 23) ?  0.40927692299999996 :
+    //  nov12 and (dayofmonth == 26) ?  0.425649864 :
+    //  nov12 and (dayofmonth == 27) ?  0.415660896 :
+    //  nov12 and (dayofmonth == 28) ?  0.399101262 :
+    //  nov12 and (dayofmonth == 29) ?  0.41925848299999996 :
+    //  nov12 and (dayofmonth == 30) ?  0.405114081 :
+    //  dec12 and (dayofmonth == 3) ?  0.422903465 :
+    //  dec12 and (dayofmonth == 4) ?  0.381616436 :
+    //  dec12 and (dayofmonth == 5) ?  0.365733717 :
+    //  dec12 and (dayofmonth == 6) ?  0.39073447 :
+    //  dec12 and (dayofmonth == 7) ?  0.401575058 :
+    //  dec12 and (dayofmonth == 10) ?  0.382850504 :
+    //  dec12 and (dayofmonth == 11) ?  0.397593329 :
+    //  dec12 and (dayofmonth == 12) ?  0.398400604 :
+    //  dec12 and (dayofmonth == 13) ?  0.38777949899999997 :
+    //  dec12 and (dayofmonth == 14) ?  0.36679655200000005 :
+    //  dec12 and (dayofmonth == 17) ?  0.36508238299999995 :
+    //  dec12 and (dayofmonth == 18) ?  0.39959983299999996 :
+    //  dec12 and (dayofmonth == 19) ?  0.398091049 :
+    //  dec12 and (dayofmonth == 20) ?  0.389809177 :
+    //  dec12 and (dayofmonth == 21) ?  0.39959054200000005 :
+    //  dec12 and (dayofmonth == 24) ?  0.37566208100000004 :
+    //  dec12 and (dayofmonth == 26) ?  0.36613214899999996 :
+    //  dec12 and (dayofmonth == 27) ?  0.382920621 :
+    //  dec12 and (dayofmonth == 28) ?  0.373180034 :
+    //  dec12 and (dayofmonth == 31) ?  0.367612702 :
+    //  jan13 and (dayofmonth == 2) ?  0.408387181 :
+    //  jan13 and (dayofmonth == 3) ?  0.41108420700000003 :
+    //  jan13 and (dayofmonth == 4) ?  0.40085829 :
+    //  jan13 and (dayofmonth == 7) ?  0.421020455 :
+    //  jan13 and (dayofmonth == 8) ?  0.42640782200000005 :
+    //  jan13 and (dayofmonth == 9) ?  0.401299174 :
+    //  jan13 and (dayofmonth == 10) ?  0.40652189299999997 :
+    //  jan13 and (dayofmonth == 11) ?  0.40695500700000004 :
+    //  jan13 and (dayofmonth == 14) ?  0.39640718700000005 :
+    //  jan13 and (dayofmonth == 15) ?  0.37745356 :
+    //  jan13 and (dayofmonth == 16) ?  0.400468816 :
+    //  jan13 and (dayofmonth == 17) ?  0.40545610299999996 :
+    //  jan13 and (dayofmonth == 18) ?  0.420186392 :
+    //  jan13 and (dayofmonth == 22) ?  0.40483782799999996 :
+    //  jan13 and (dayofmonth == 23) ?  0.399654611 :
+    //  jan13 and (dayofmonth == 24) ?  0.370458006 :
+    //  jan13 and (dayofmonth == 25) ?  0.387115124 :
+    //  jan13 and (dayofmonth == 28) ?  0.38400301700000006 :
+    //  jan13 and (dayofmonth == 29) ?  0.420941389 :
+    //  jan13 and (dayofmonth == 30) ?  0.416475716 :
+    //  jan13 and (dayofmonth == 31) ?  0.405991965 :
+    //  feb13 and (dayofmonth == 1) ?  0.40274996799999996 :
+    //  feb13 and (dayofmonth == 4) ?  0.407471645 :
+    //  feb13 and (dayofmonth == 5) ?  0.406997345 :
+    //  feb13 and (dayofmonth == 6) ?  0.429158792 :
+    //  feb13 and (dayofmonth == 7) ?  0.423840104 :
+    //  feb13 and (dayofmonth == 8) ?  0.423994382 :
+    //  feb13 and (dayofmonth == 11) ?  0.41446485200000005 :
+    //  feb13 and (dayofmonth == 12) ?  0.405188321 :
+    //  feb13 and (dayofmonth == 13) ?  0.389954765 :
+    //  feb13 and (dayofmonth == 14) ?  0.399621358 :
+    //  feb13 and (dayofmonth == 15) ?  0.410504046 :
+    //  feb13 and (dayofmonth == 19) ?  0.37932958299999997 :
+    //  feb13 and (dayofmonth == 20) ?  0.395198082 :
+    //  feb13 and (dayofmonth == 21) ?  0.405178056 :
+    //  feb13 and (dayofmonth == 22) ?  0.40651061299999997 :
+    //  feb13 and (dayofmonth == 25) ?  0.415833681 :
+    //  feb13 and (dayofmonth == 26) ?  0.41566136600000003 :
+    //  feb13 and (dayofmonth == 27) ?  0.392456962 :
+    //  feb13 and (dayofmonth == 28) ?  0.40315598700000005 :
+    //  mar13 and (dayofmonth == 1) ?  0.408234946 :
+    //  mar13 and (dayofmonth == 4) ?  0.39259849 :
+    //  mar13 and (dayofmonth == 5) ?  0.383489399 :
+    //  mar13 and (dayofmonth == 6) ?  0.385603996 :
+    //  mar13 and (dayofmonth == 7) ?  0.38906761700000003 :
+    //  mar13 and (dayofmonth == 8) ?  0.39739291299999996 :
+    //  mar13 and (dayofmonth == 11) ?  0.387688585 :
+    //  mar13 and (dayofmonth == 12) ?  0.402901503 :
+    //  mar13 and (dayofmonth == 13) ?  0.3943232 :
+    //  mar13 and (dayofmonth == 14) ?  0.386227489 :
+    //  mar13 and (dayofmonth == 15) ?  0.41038614100000004 :
+    //  mar13 and (dayofmonth == 18) ?  0.436842036 :
+    //  mar13 and (dayofmonth == 19) ?  0.417850272 :
+    //  mar13 and (dayofmonth == 20) ?  0.38858769299999996 :
+    //  mar13 and (dayofmonth == 21) ?  0.423769703 :
+    //  mar13 and (dayofmonth == 22) ?  0.404141075 :
+    //  mar13 and (dayofmonth == 25) ?  0.41466831200000004 :
+    //  mar13 and (dayofmonth == 26) ?  0.410085849 :
+    //  mar13 and (dayofmonth == 27) ?  0.41610531799999995 :
+    //  mar13 and (dayofmonth == 28) ?  0.394636595 :
+    //  apr13 and (dayofmonth == 1) ?  0.39988148 :
+    //  apr13 and (dayofmonth == 2) ?  0.37748408299999997 :
+    //  apr13 and (dayofmonth == 3) ?  0.409943716 :
+    //  apr13 and (dayofmonth == 4) ?  0.41217894200000005 :
+    //  apr13 and (dayofmonth == 5) ?  0.430148959 :
+    //  apr13 and (dayofmonth == 8) ?  0.40397936100000004 :
+    //  apr13 and (dayofmonth == 9) ?  0.410513299 :
+    //  apr13 and (dayofmonth == 10) ?  0.402280746 :
+    //  apr13 and (dayofmonth == 11) ?  0.390854995 :
+    //  apr13 and (dayofmonth == 12) ?  0.40633197299999996 :
+    //  apr13 and (dayofmonth == 15) ?  0.406749219 :
+    //  apr13 and (dayofmonth == 16) ?  0.411591273 :
+    //  apr13 and (dayofmonth == 17) ?  0.407342837 :
+    //  apr13 and (dayofmonth == 18) ?  0.415606575 :
+    //  apr13 and (dayofmonth == 19) ?  0.40883546600000004 :
+    //  apr13 and (dayofmonth == 22) ?  0.39685582700000005 :
+    //  apr13 and (dayofmonth == 23) ?  0.400387153 :
+    //  apr13 and (dayofmonth == 24) ?  0.382758186 :
+    //  apr13 and (dayofmonth == 25) ?  0.386076715 :
+    //  apr13 and (dayofmonth == 26) ?  0.37332842899999996 :
+    //  apr13 and (dayofmonth == 29) ?  0.38011096200000005 :
+    //  apr13 and (dayofmonth == 30) ?  0.384629535 :
+    //  may13 and (dayofmonth == 1) ?  0.380459329 :
+    //  may13 and (dayofmonth == 2) ?  0.39966139700000003 :
+    //  may13 and (dayofmonth == 3) ?  0.382530763 :
+    //  may13 and (dayofmonth == 6) ?  0.40281168799999995 :
+    //  may13 and (dayofmonth == 7) ?  0.39813185799999995 :
+    //  may13 and (dayofmonth == 8) ?  0.395805549 :
+    //  may13 and (dayofmonth == 9) ?  0.408071215 :
+    //  may13 and (dayofmonth == 10) ?  0.406451395 :
+    //  may13 and (dayofmonth == 13) ?  0.406053616 :
+    //  may13 and (dayofmonth == 14) ?  0.38358622600000003 :
+    //  may13 and (dayofmonth == 15) ?  0.368617405 :
+    //  may13 and (dayofmonth == 16) ?  0.39776325799999995 :
+    //  may13 and (dayofmonth == 17) ?  0.39527572899999996 :
+    //  may13 and (dayofmonth == 20) ?  0.39390887 :
+    //  may13 and (dayofmonth == 21) ?  0.388424331 :
+    //  may13 and (dayofmonth == 22) ?  0.40887583299999997 :
+    //  may13 and (dayofmonth == 23) ?  0.41115545600000003 :
+    //  may13 and (dayofmonth == 24) ?  0.418170317 :
+    //  may13 and (dayofmonth == 28) ?  0.405660355 :
+    //  may13 and (dayofmonth == 29) ?  0.420451691 :
+    //  may13 and (dayofmonth == 30) ?  0.426907294 :
+    //  may13 and (dayofmonth == 31) ?  0.42251914700000004 :
+    //  jun13 and (dayofmonth == 3) ?  0.41265714 :
+    //  jun13 and (dayofmonth == 4) ?  0.43906321299999995 :
+    //  jun13 and (dayofmonth == 5) ?  0.43323931299999996 :
+    //  jun13 and (dayofmonth == 6) ?  0.42861058 :
+    //  jun13 and (dayofmonth == 7) ?  0.41719149299999997 :
+    //  jun13 and (dayofmonth == 10) ?  0.417005677 :
+    //  jun13 and (dayofmonth == 11) ?  0.422938307 :
+    //  jun13 and (dayofmonth == 12) ?  0.429577889 :
+    //  jun13 and (dayofmonth == 13) ?  0.42316032 :
+    //  jun13 and (dayofmonth == 14) ?  0.43118351200000005 :
+    //  jun13 and (dayofmonth == 17) ?  0.395961526 :
+    //  jun13 and (dayofmonth == 18) ?  0.422241156 :
+    //  jun13 and (dayofmonth == 19) ?  0.454881305 :
+    //  jun13 and (dayofmonth == 20) ?  0.468162029 :
+    //  jun13 and (dayofmonth == 21) ?  0.440914232 :
+    //  jun13 and (dayofmonth == 24) ?  0.38994862700000005 :
+    //  jun13 and (dayofmonth == 25) ?  0.404326808 :
+    //  jun13 and (dayofmonth == 26) ?  0.41748937 :
+    //  jun13 and (dayofmonth == 27) ?  0.422762284 :
+    //  jun13 and (dayofmonth == 28) ?  0.398370106 :
+    //  jul13 and (dayofmonth == 1) ?  0.398038719 :
+    //  jul13 and (dayofmonth == 2) ?  0.42626420200000004 :
+    //  jul13 and (dayofmonth == 3) ?  0.388393621 :
+    //  jul13 and (dayofmonth == 5) ?  0.422657369 :
+    //  jul13 and (dayofmonth == 8) ?  0.411377503 :
+    //  jul13 and (dayofmonth == 9) ?  0.399287486 :
+    //  jul13 and (dayofmonth == 10) ?  0.422498517 :
+    //  jul13 and (dayofmonth == 11) ?  0.400344708 :
+    //  jul13 and (dayofmonth == 12) ?  0.406724665 :
+    //  jul13 and (dayofmonth == 15) ?  0.38910049799999996 :
+    //  jul13 and (dayofmonth == 16) ?  0.392956597 :
+    //  jul13 and (dayofmonth == 17) ?  0.40594339100000004 :
+    //  jul13 and (dayofmonth == 18) ?  0.395381324 :
+    //  jul13 and (dayofmonth == 19) ?  0.408125996 :
+    //  jul13 and (dayofmonth == 22) ?  0.40227007299999995 :
+    //  jul13 and (dayofmonth == 23) ?  0.38344838700000006 :
+    //  jul13 and (dayofmonth == 24) ?  0.40533480200000005 :
+    //  jul13 and (dayofmonth == 25) ?  0.389338675 :
+    //  jul13 and (dayofmonth == 26) ?  0.408254244 :
+    //  jul13 and (dayofmonth == 29) ?  0.41433441200000004 :
+    //  jul13 and (dayofmonth == 30) ?  0.40084746200000004 :
+    //  jul13 and (dayofmonth == 31) ?  0.401066697 :
+    //  aug13 and (dayofmonth == 1) ?  0.39648143399999997 :
+    //  aug13 and (dayofmonth == 2) ?  0.406785315 :
+    //  aug13 and (dayofmonth == 5) ?  0.421547922 :
+    //  aug13 and (dayofmonth == 6) ?  0.42142354600000004 :
+    //  aug13 and (dayofmonth == 7) ?  0.417691669 :
+    //  aug13 and (dayofmonth == 8) ?  0.405643463 :
+    //  aug13 and (dayofmonth == 9) ?  0.412346719 :
+    //  aug13 and (dayofmonth == 12) ?  0.413041699 :
+    //  aug13 and (dayofmonth == 13) ?  0.436397166 :
+    //  aug13 and (dayofmonth == 14) ?  0.446252999 :
+    //  aug13 and (dayofmonth == 15) ?  0.444900309 :
+    //  aug13 and (dayofmonth == 16) ?  0.44346849299999996 :
+    //  aug13 and (dayofmonth == 19) ?  0.431692856 :
+    //  aug13 and (dayofmonth == 20) ?  0.420550035 :
+    //  aug13 and (dayofmonth == 21) ?  0.452575025 :
+    //  aug13 and (dayofmonth == 22) ?  0.403792705 :
+    //  aug13 and (dayofmonth == 23) ?  0.44046208 :
+    //  aug13 and (dayofmonth == 26) ?  0.41176324 :
+    //  aug13 and (dayofmonth == 27) ?  0.434131029 :
+    //  aug13 and (dayofmonth == 28) ?  0.409052798 :
+    //  aug13 and (dayofmonth == 29) ?  0.45443690700000006 :
+    //  aug13 and (dayofmonth == 30) ?  0.47233023799999996 :
+    //  sep13 and (dayofmonth == 3) ?  0.44701683700000006 :
+    //  sep13 and (dayofmonth == 4) ?  0.417623749 :
+    //  sep13 and (dayofmonth == 5) ?  0.424549501 :
+    //  sep13 and (dayofmonth == 6) ?  0.421621133 :
+    //  sep13 and (dayofmonth == 9) ?  0.39155695 :
+    //  sep13 and (dayofmonth == 10) ?  0.39833364299999996 :
+    //  sep13 and (dayofmonth == 11) ?  0.39940711700000003 :
+    //  sep13 and (dayofmonth == 12) ?  0.410144666 :
+    //  sep13 and (dayofmonth == 13) ?  0.408249604 :
+    //  sep13 and (dayofmonth == 16) ?  0.38393710600000003 :
+    //  sep13 and (dayofmonth == 17) ?  0.40631261399999996 :
+    //  sep13 and (dayofmonth == 18) ?  0.410992385 :
+    //  sep13 and (dayofmonth == 19) ?  0.406220742 :
+    //  sep13 and (dayofmonth == 20) ?  0.43277319399999997 :
+    //  sep13 and (dayofmonth == 23) ?  0.411561719 :
+    //  sep13 and (dayofmonth == 24) ?  0.42494678799999996 :
+    //  sep13 and (dayofmonth == 25) ?  0.40892629700000005 :
+    //  sep13 and (dayofmonth == 26) ?  0.401253508 :
+    //  sep13 and (dayofmonth == 27) ?  0.42395836299999995 :
+    //  sep13 and (dayofmonth == 30) ?  0.44337083899999996 :
+    //  oct13 and (dayofmonth == 1) ?  0.43085155399999997 :
+    //  oct13 and (dayofmonth == 2) ?  0.430642636 :
+    //  oct13 and (dayofmonth == 3) ?  0.44804537 :
+    //  oct13 and (dayofmonth == 4) ?  0.40951112799999995 :
+    //  oct13 and (dayofmonth == 7) ?  0.425328125 :
+    //  oct13 and (dayofmonth == 8) ?  0.42596544 :
+    //  oct13 and (dayofmonth == 9) ?  0.423213622 :
+    //  oct13 and (dayofmonth == 10) ?  0.42118334799999996 :
+    //  oct13 and (dayofmonth == 11) ?  0.426664865 :
+    //  oct13 and (dayofmonth == 14) ?  0.418106983 :
+    //  oct13 and (dayofmonth == 15) ?  0.43075410399999997 :
+    //  oct13 and (dayofmonth == 16) ?  0.39605189700000004 :
+    //  oct13 and (dayofmonth == 17) ?  0.42003851799999997 :
+    //  oct13 and (dayofmonth == 18) ?  0.42405740799999997 :
+    //  oct13 and (dayofmonth == 21) ?  0.41200797299999997 :
+    //  oct13 and (dayofmonth == 22) ?  0.39249194600000004 :
+    //  oct13 and (dayofmonth == 23) ?  0.420586285 :
+    //  oct13 and (dayofmonth == 24) ?  0.385371619 :
+    //  oct13 and (dayofmonth == 25) ?  0.39974516600000004 :
+    //  oct13 and (dayofmonth == 28) ?  0.401925818 :
+    //  oct13 and (dayofmonth == 29) ?  0.406360344 :
+    //  oct13 and (dayofmonth == 30) ?  0.41552413 :
+    //  oct13 and (dayofmonth == 31) ?  0.42989643299999997 :
+    //  nov13 and (dayofmonth == 1) ?  0.43058977299999995 :
+    //  nov13 and (dayofmonth == 4) ?  0.411233224 :
+    //  nov13 and (dayofmonth == 5) ?  0.446061715 :
+    //  nov13 and (dayofmonth == 6) ?  0.424633985 :
+    //  nov13 and (dayofmonth == 7) ?  0.434519709 :
+    //  nov13 and (dayofmonth == 8) ?  0.431594975 :
+    //  nov13 and (dayofmonth == 11) ?  0.438949507 :
+    //  nov13 and (dayofmonth == 12) ?  0.43602493299999995 :
+    //  nov13 and (dayofmonth == 13) ?  0.41953666100000003 :
+    //  nov13 and (dayofmonth == 14) ?  0.40775455 :
+    //  nov13 and (dayofmonth == 15) ?  0.42240951 :
+    //  nov13 and (dayofmonth == 18) ?  0.408628579 :
+    //  nov13 and (dayofmonth == 19) ?  0.419945415 :
+    //  nov13 and (dayofmonth == 20) ?  0.421091768 :
+    //  nov13 and (dayofmonth == 21) ?  0.400147464 :
+    //  nov13 and (dayofmonth == 22) ?  0.407608962 :
+    //  nov13 and (dayofmonth == 25) ?  0.40874239100000004 :
+    //  nov13 and (dayofmonth == 26) ?  0.415059277 :
+    //  nov13 and (dayofmonth == 27) ?  0.419096216 :
+    //  nov13 and (dayofmonth == 29) ?  0.426885763 :
+    //  dec13 and (dayofmonth == 2) ?  0.428374452 :
+    //  dec13 and (dayofmonth == 3) ?  0.42098858299999997 :
+    //  dec13 and (dayofmonth == 4) ?  0.418821936 :
+    //  dec13 and (dayofmonth == 5) ?  0.44130647700000003 :
+    //  dec13 and (dayofmonth == 6) ?  0.417095547 :
+    //  dec13 and (dayofmonth == 9) ?  0.388848226 :
+    //  dec13 and (dayofmonth == 10) ?  0.39871658299999996 :
+    //  dec13 and (dayofmonth == 11) ?  0.408032742 :
+    //  dec13 and (dayofmonth == 12) ?  0.41060403799999995 :
+    //  dec13 and (dayofmonth == 13) ?  0.394281521 :
+    //  dec13 and (dayofmonth == 16) ?  0.38787735700000003 :
+    //  dec13 and (dayofmonth == 17) ?  0.401373565 :
+    //  dec13 and (dayofmonth == 18) ?  0.40164014200000003 :
+    //  dec13 and (dayofmonth == 19) ?  0.408457289 :
+    //  dec13 and (dayofmonth == 20) ?  0.41545642 :
+    //  dec13 and (dayofmonth == 23) ?  0.395686053 :
+    //  dec13 and (dayofmonth == 24) ?  0.39637859700000005 :
+    //  dec13 and (dayofmonth == 26) ?  0.39799816 :
+    //  dec13 and (dayofmonth == 27) ?  0.41625426 :
+    //  dec13 and (dayofmonth == 30) ?  0.40669700200000003 :
+    //  dec13 and (dayofmonth == 31) ?  0.40629718600000003 :
+    //  jan14 and (dayofmonth == 2) ?  0.41162564799999996 :
+    //  jan14 and (dayofmonth == 3) ?  0.411462272 :
+    //  jan14 and (dayofmonth == 6) ?  0.39921723 :
+    //  jan14 and (dayofmonth == 7) ?  0.390529719 :
+    //  jan14 and (dayofmonth == 8) ?  0.38607994700000003 :
+    //  jan14 and (dayofmonth == 9) ?  0.40474504200000005 :
+    //  jan14 and (dayofmonth == 10) ?  0.397266456 :
+    //  jan14 and (dayofmonth == 13) ?  0.412152084 :
+    //  jan14 and (dayofmonth == 14) ?  0.393536879 :
+    //  jan14 and (dayofmonth == 15) ?  0.38607097100000004 :
+    //  jan14 and (dayofmonth == 16) ?  0.407258009 :
+    //  jan14 and (dayofmonth == 17) ?  0.426788265 :
+    //  jan14 and (dayofmonth == 21) ?  0.36925482200000004 :
+    //  jan14 and (dayofmonth == 22) ?  0.400514873 :
+    //  jan14 and (dayofmonth == 23) ?  0.40096832299999996 :
+    //  jan14 and (dayofmonth == 24) ?  0.410183419 :
+    //  jan14 and (dayofmonth == 27) ?  0.377788743 :
+    //  jan14 and (dayofmonth == 28) ?  0.390695823 :
+    //  jan14 and (dayofmonth == 29) ?  0.417754038 :
+    //  jan14 and (dayofmonth == 30) ?  0.37662003200000005 :
+    //  jan14 and (dayofmonth == 31) ?  0.407178132 :
+    //  feb14 and (dayofmonth == 3) ?  0.430096555 :
+    //  feb14 and (dayofmonth == 4) ?  0.402792837 :
+    //  feb14 and (dayofmonth == 5) ?  0.396992305 :
+    //  feb14 and (dayofmonth == 6) ?  0.39145232399999996 :
+    //  feb14 and (dayofmonth == 7) ?  0.408045304 :
+    //  feb14 and (dayofmonth == 10) ?  0.40555695700000005 :
+    //  feb14 and (dayofmonth == 11) ?  0.38922699 :
+    //  feb14 and (dayofmonth == 12) ?  0.418906987 :
+    //  feb14 and (dayofmonth == 13) ?  0.39344164299999995 :
+    //  feb14 and (dayofmonth == 14) ?  0.39671342600000004 :
+    //  feb14 and (dayofmonth == 18) ?  0.40909906700000004 :
+    //  feb14 and (dayofmonth == 19) ?  0.42133127299999995 :
+    //  feb14 and (dayofmonth == 20) ?  0.39376951 :
+    //  feb14 and (dayofmonth == 21) ?  0.41567306200000004 :
+    //  feb14 and (dayofmonth == 24) ?  0.388094141 :
+    //  feb14 and (dayofmonth == 25) ?  0.402800978 :
+    //  feb14 and (dayofmonth == 26) ?  0.407612729 :
+    //  feb14 and (dayofmonth == 27) ?  0.39870110200000003 :
+    //  feb14 and (dayofmonth == 28) ?  0.41155858700000003 :
+    //  mar14 and (dayofmonth == 3) ?  0.43235068 :
+    //  mar14 and (dayofmonth == 4) ?  0.39917030600000003 :
+    //  mar14 and (dayofmonth == 5) ?  0.410746722 :
+    //  mar14 and (dayofmonth == 6) ?  0.410707602 :
+    //  mar14 and (dayofmonth == 7) ?  0.416443113 :
+    //  mar14 and (dayofmonth == 10) ?  0.419935794 :
+    //  mar14 and (dayofmonth == 11) ?  0.418294428 :
+    //  mar14 and (dayofmonth == 12) ?  0.401850019 :
+    //  mar14 and (dayofmonth == 13) ?  0.422458839 :
+    //  mar14 and (dayofmonth == 14) ?  0.39408090799999995 :
+    //  mar14 and (dayofmonth == 17) ?  0.400936257 :
+    //  mar14 and (dayofmonth == 18) ?  0.39720153700000005 :
+    //  mar14 and (dayofmonth == 19) ?  0.443469575 :
+    //  mar14 and (dayofmonth == 20) ?  0.420561905 :
+    //  mar14 and (dayofmonth == 21) ?  0.420882359 :
+    //  mar14 and (dayofmonth == 24) ?  0.405004631 :
+    //  mar14 and (dayofmonth == 25) ?  0.401020919 :
+    //  mar14 and (dayofmonth == 26) ?  0.38862145 :
+    //  mar14 and (dayofmonth == 27) ?  0.386546851 :
+    //  mar14 and (dayofmonth == 28) ?  0.39913971200000004 :
+    //  mar14 and (dayofmonth == 31) ?  0.403332331 :
+    //  apr14 and (dayofmonth == 1) ?  0.377560743 :
+    //  apr14 and (dayofmonth == 2) ?  0.393700703 :
+    //  apr14 and (dayofmonth == 3) ?  0.398267834 :
+    //  apr14 and (dayofmonth == 4) ?  0.39314409899999997 :
+    //  apr14 and (dayofmonth == 7) ?  0.37713692600000004 :
+    //  apr14 and (dayofmonth == 8) ?  0.36894077200000003 :
+    //  apr14 and (dayofmonth == 9) ?  0.37824726399999997 :
+    //  apr14 and (dayofmonth == 10) ?  0.41778861 :
+    //  apr14 and (dayofmonth == 11) ?  0.393054594 :
+    //  apr14 and (dayofmonth == 14) ?  0.40343750799999994 :
+    //  apr14 and (dayofmonth == 15) ?  0.408854458 :
+    //  apr14 and (dayofmonth == 16) ?  0.406395935 :
+    //  apr14 and (dayofmonth == 17) ?  0.431651405 :
+    //  apr14 and (dayofmonth == 21) ?  0.403985775 :
+    //  apr14 and (dayofmonth == 22) ?  0.400955709 :
+    //  apr14 and (dayofmonth == 23) ?  0.40317930799999996 :
+    //  apr14 and (dayofmonth == 24) ?  0.371125053 :
+    //  apr14 and (dayofmonth == 25) ?  0.405602222 :
+    //  apr14 and (dayofmonth == 28) ?  0.38105384600000003 :
+    //  apr14 and (dayofmonth == 29) ?  0.37297864399999997 :
+    //  apr14 and (dayofmonth == 30) ?  0.403251573 :
+    //  may14 and (dayofmonth == 1) ?  0.415291656 :
+    //  may14 and (dayofmonth == 2) ?  0.426634859 :
+    //  may14 and (dayofmonth == 5) ?  0.396783902 :
+    //  may14 and (dayofmonth == 6) ?  0.410473214 :
+    //  may14 and (dayofmonth == 7) ?  0.40438003 :
+    //  may14 and (dayofmonth == 8) ?  0.412564407 :
+    //  may14 and (dayofmonth == 9) ?  0.39249761299999997 :
+    //  may14 and (dayofmonth == 12) ?  0.388427691 :
+    //  may14 and (dayofmonth == 13) ?  0.384958412 :
+    //  may14 and (dayofmonth == 14) ?  0.409827815 :
+    //  may14 and (dayofmonth == 15) ?  0.42325038299999995 :
+    //  may14 and (dayofmonth == 16) ?  0.40056624700000004 :
+    //  may14 and (dayofmonth == 19) ?  0.39858649799999996 :
+    //  may14 and (dayofmonth == 20) ?  0.43337727200000004 :
+    //  may14 and (dayofmonth == 21) ?  0.402055729 :
+    //  may14 and (dayofmonth == 22) ?  0.402673166 :
+    //  may14 and (dayofmonth == 23) ?  0.404528395 :
+    //  may14 and (dayofmonth == 27) ?  0.380749799 :
+    //  may14 and (dayofmonth == 28) ?  0.387001685 :
+    //  may14 and (dayofmonth == 29) ?  0.389201225 :
+    //  may14 and (dayofmonth == 30) ?  0.405881146 :
+    //  jun14 and (dayofmonth == 2) ?  0.40364799799999995 :
+    //  jun14 and (dayofmonth == 3) ?  0.4095818 :
+    //  jun14 and (dayofmonth == 4) ?  0.39345974799999994 :
+    //  jun14 and (dayofmonth == 5) ?  0.38398319299999994 :
+    //  jun14 and (dayofmonth == 6) ?  0.39202270899999997 :
+    //  jun14 and (dayofmonth == 9) ?  0.398294366 :
+    //  jun14 and (dayofmonth == 10) ?  0.386255411 :
+    //  jun14 and (dayofmonth == 11) ?  0.411642337 :
+    //  jun14 and (dayofmonth == 12) ?  0.399892066 :
+    //  jun14 and (dayofmonth == 13) ?  0.39990942 :
+    //  jun14 and (dayofmonth == 16) ?  0.404646312 :
+    //  jun14 and (dayofmonth == 17) ?  0.40077287 :
+    //  jun14 and (dayofmonth == 18) ?  0.38949046299999995 :
+    //  jun14 and (dayofmonth == 19) ?  0.405197659 :
+    //  jun14 and (dayofmonth == 20) ?  0.393901062 :
+    //  jun14 and (dayofmonth == 23) ?  0.392919377 :
+    //  jun14 and (dayofmonth == 24) ?  0.38487827 :
+    //  jun14 and (dayofmonth == 25) ?  0.374541248 :
+    //  jun14 and (dayofmonth == 26) ?  0.39499285700000003 :
+    //  jun14 and (dayofmonth == 27) ?  0.39393539 :
+    //  jun14 and (dayofmonth == 30) ?  0.38939116100000004 :
+    //  jul14 and (dayofmonth == 1) ?  0.382698508 :
+    //  jul14 and (dayofmonth == 2) ?  0.37206316899999997 :
+    //  jul14 and (dayofmonth == 3) ?  0.36414342 :
+    //  jul14 and (dayofmonth == 7) ?  0.387948877 :
+    //  jul14 and (dayofmonth == 8) ?  0.374529656 :
+    //  jul14 and (dayofmonth == 9) ?  0.37710639700000004 :
+    //  jul14 and (dayofmonth == 10) ?  0.37983148 :
+    //  jul14 and (dayofmonth == 11) ?  0.392609547 :
+    //  jul14 and (dayofmonth == 14) ?  0.37882204700000005 :
+    //  jul14 and (dayofmonth == 15) ?  0.38966418399999997 :
+    //  jul14 and (dayofmonth == 16) ?  0.38498253200000004 :
+    //  jul14 and (dayofmonth == 17) ?  0.401798125 :
+    //  jul14 and (dayofmonth == 18) ?  0.408956516 :
+    //  jul14 and (dayofmonth == 21) ?  0.395295238 :
+    //  jul14 and (dayofmonth == 22) ?  0.375403793 :
+    //  jul14 and (dayofmonth == 23) ?  0.363870019 :
+    //  jul14 and (dayofmonth == 24) ?  0.370110485 :
+    //  jul14 and (dayofmonth == 25) ?  0.38412621700000005 :
+    //  jul14 and (dayofmonth == 28) ?  0.36705088399999997 :
+    //  jul14 and (dayofmonth == 29) ?  0.391568091 :
+    //  jul14 and (dayofmonth == 30) ?  0.37418177700000005 :
+    //  jul14 and (dayofmonth == 31) ?  0.389536079 :
+    //  aug14 and (dayofmonth == 1) ?  0.37798441899999996 :
+    //  aug14 and (dayofmonth == 4) ?  0.388827021 :
+    //  aug14 and (dayofmonth == 5) ?  0.42046185 :
+    //  aug14 and (dayofmonth == 6) ?  0.39712957299999996 :
+    //  aug14 and (dayofmonth == 7) ?  0.416941214 :
+    //  aug14 and (dayofmonth == 8) ?  0.389454746 :
+    //  aug14 and (dayofmonth == 11) ?  0.434052954 :
+    //  aug14 and (dayofmonth == 12) ?  0.41967350299999995 :
+    //  aug14 and (dayofmonth == 13) ?  0.39759558 :
+    //  aug14 and (dayofmonth == 14) ?  0.391260389 :
+    //  aug14 and (dayofmonth == 15) ?  0.433309035 :
+    //  aug14 and (dayofmonth == 18) ?  0.37412517700000003 :
+    //  aug14 and (dayofmonth == 19) ?  0.367713324 :
+    //  aug14 and (dayofmonth == 20) ?  0.386948986 :
+    //  aug14 and (dayofmonth == 21) ?  0.391912419 :
+    //  aug14 and (dayofmonth == 22) ?  0.40256009299999995 :
+    //  aug14 and (dayofmonth == 25) ?  0.37806383 :
+    //  aug14 and (dayofmonth == 26) ?  0.362279852 :
+    //  aug14 and (dayofmonth == 27) ?  0.38286459100000003 :
+    //  aug14 and (dayofmonth == 28) ?  0.36967817 :
+    //  aug14 and (dayofmonth == 29) ?  0.38308281200000005 :
+    //  sep14 and (dayofmonth == 2) ?  0.39489199 :
+    //  sep14 and (dayofmonth == 3) ?  0.374052244 :
+    //  sep14 and (dayofmonth == 4) ?  0.403540134 :
+    //  sep14 and (dayofmonth == 5) ?  0.377857389 :
+    //  sep14 and (dayofmonth == 8) ?  0.40796991 :
+    //  sep14 and (dayofmonth == 9) ?  0.390597436 :
+    //  sep14 and (dayofmonth == 10) ?  0.37600060399999996 :
+    //  sep14 and (dayofmonth == 11) ?  0.398071809 :
+    //  sep14 and (dayofmonth == 12) ?  0.417705228 :
+    //  sep14 and (dayofmonth == 15) ?  0.389824474 :
+    //  sep14 and (dayofmonth == 16) ?  0.37404151700000005 :
+    //  sep14 and (dayofmonth == 17) ?  0.41640567799999995 :
+    //  sep14 and (dayofmonth == 18) ?  0.410996374 :
+    //  sep14 and (dayofmonth == 19) ?  0.40416105399999996 :
+    //  sep14 and (dayofmonth == 22) ?  0.371638937 :
+    //  sep14 and (dayofmonth == 23) ?  0.381579128 :
+    //  sep14 and (dayofmonth == 24) ?  0.385398733 :
+    //  sep14 and (dayofmonth == 25) ?  0.409672014 :
+    //  sep14 and (dayofmonth == 26) ?  0.37780883299999996 :
+    //  sep14 and (dayofmonth == 29) ?  0.40351798899999997 :
+    //  sep14 and (dayofmonth == 30) ?  0.401688579 :
+    //  oct14 and (dayofmonth == 1) ?  0.412982965 :
+    //  oct14 and (dayofmonth == 2) ?  0.385785049 :
+    //  oct14 and (dayofmonth == 3) ?  0.39765834899999997 :
+    //  oct14 and (dayofmonth == 6) ?  0.407405965 :
+    //  oct14 and (dayofmonth == 7) ?  0.42513542299999996 :
+    //  oct14 and (dayofmonth == 8) ?  0.39478202 :
+    //  oct14 and (dayofmonth == 9) ?  0.41079810200000005 :
+    //  oct14 and (dayofmonth == 10) ?  0.38186807799999994 :
+    //  oct14 and (dayofmonth == 13) ?  0.401737744 :
+    //  oct14 and (dayofmonth == 14) ?  0.396897764 :
+    //  oct14 and (dayofmonth == 15) ?  0.364920898 :
+    //  oct14 and (dayofmonth == 16) ?  0.39712404799999995 :
+    //  oct14 and (dayofmonth == 17) ?  0.399203708 :
+    //  oct14 and (dayofmonth == 20) ?  0.40793182899999997 :
+    //  oct14 and (dayofmonth == 21) ?  0.385346404 :
+    //  oct14 and (dayofmonth == 22) ?  0.40895455799999997 :
+    //  oct14 and (dayofmonth == 23) ?  0.408436132 :
+    //  oct14 and (dayofmonth == 24) ?  0.40152350600000003 :
+    //  oct14 and (dayofmonth == 27) ?  0.405896301 :
+    //  oct14 and (dayofmonth == 28) ?  0.392942736 :
+    //  oct14 and (dayofmonth == 29) ?  0.38363414700000004 :
+    //  oct14 and (dayofmonth == 30) ?  0.38714643299999996 :
+    //  oct14 and (dayofmonth == 31) ?  0.36380820700000005 :
+    //  nov14 and (dayofmonth == 3) ?  0.38960373299999995 :
+    //  nov14 and (dayofmonth == 4) ?  0.379008206 :
+    //  nov14 and (dayofmonth == 5) ?  0.39472470299999995 :
+    //  nov14 and (dayofmonth == 6) ?  0.378502836 :
+    //  nov14 and (dayofmonth == 7) ?  0.384528839 :
+    //  nov14 and (dayofmonth == 10) ?  0.38265769899999996 :
+    //  nov14 and (dayofmonth == 11) ?  0.377887542 :
+    //  nov14 and (dayofmonth == 12) ?  0.391469076 :
+    //  nov14 and (dayofmonth == 13) ?  0.401996367 :
+    //  nov14 and (dayofmonth == 14) ?  0.39250369 :
+    //  nov14 and (dayofmonth == 17) ?  0.384594745 :
+    //  nov14 and (dayofmonth == 18) ?  0.38890642700000005 :
+    //  nov14 and (dayofmonth == 19) ?  0.40825679200000003 :
+    //  nov14 and (dayofmonth == 20) ?  0.39410036 :
+    //  nov14 and (dayofmonth == 21) ?  0.397911209 :
+    //  nov14 and (dayofmonth == 24) ?  0.368171645 :
+    //  nov14 and (dayofmonth == 25) ?  0.388518856 :
+    //  nov14 and (dayofmonth == 26) ?  0.403709815 :
+    //  nov14 and (dayofmonth == 28) ?  0.36825507799999996 :
+    //  dec14 and (dayofmonth == 1) ?  0.375379996 :
+    //  dec14 and (dayofmonth == 2) ?  0.392803974 :
+    //  dec14 and (dayofmonth == 3) ?  0.40523418 :
+    //  dec14 and (dayofmonth == 4) ?  0.39339185299999996 :
+    //  dec14 and (dayofmonth == 5) ?  0.37666267299999995 :
+    //  dec14 and (dayofmonth == 8) ?  0.389248324 :
+    //  dec14 and (dayofmonth == 9) ?  0.37654708200000003 :
+    //  dec14 and (dayofmonth == 10) ?  0.414184328 :
+    //  dec14 and (dayofmonth == 11) ?  0.370983492 :
+    //  dec14 and (dayofmonth == 12) ?  0.412041473 :
+    //  dec14 and (dayofmonth == 15) ?  0.37131106700000005 :
+    //  dec14 and (dayofmonth == 16) ?  0.369141565 :
+    //  dec14 and (dayofmonth == 17) ?  0.39385520399999996 :
+    //  dec14 and (dayofmonth == 18) ?  0.356262389 :
+    //  dec14 and (dayofmonth == 19) ?  0.36259265 :
+    //  dec14 and (dayofmonth == 22) ?  0.353497842 :
+    //  dec14 and (dayofmonth == 23) ?  0.34612253 :
+    //  dec14 and (dayofmonth == 24) ?  0.36729956700000005 :
+    //  dec14 and (dayofmonth == 26) ?  0.38522327700000003 :
+    //  dec14 and (dayofmonth == 29) ?  0.37791268899999997 :
+    //  dec14 and (dayofmonth == 30) ?  0.39344436899999996 :
+    //  dec14 and (dayofmonth == 31) ?  0.42231656700000003 :
+    //  jan15 and (dayofmonth == 2) ?  0.396344314 :
+    //  jan15 and (dayofmonth == 5) ?  0.439579428 :
+    //  jan15 and (dayofmonth == 6) ?  0.427564304 :
+    //  jan15 and (dayofmonth == 7) ?  0.40886974600000003 :
+    //  jan15 and (dayofmonth == 8) ?  0.38254956700000003 :
+    //  jan15 and (dayofmonth == 9) ?  0.42792616299999997 :
+    //  jan15 and (dayofmonth == 12) ?  0.42105083600000004 :
+    //  jan15 and (dayofmonth == 13) ?  0.403434515 :
+    //  jan15 and (dayofmonth == 14) ?  0.428628952 :
+    //  jan15 and (dayofmonth == 15) ?  0.438354765 :
+    //  jan15 and (dayofmonth == 16) ?  0.413191739 :
+    //  jan15 and (dayofmonth == 20) ?  0.40613282799999995 :
+    //  jan15 and (dayofmonth == 21) ?  0.417358955 :
+    //  jan15 and (dayofmonth == 22) ?  0.39315105899999997 :
+    //  jan15 and (dayofmonth == 23) ?  0.39847986 :
+    //  jan15 and (dayofmonth == 26) ?  0.39447787 :
+    //  jan15 and (dayofmonth == 27) ?  0.41554700299999997 :
+    //  jan15 and (dayofmonth == 28) ?  0.39943254200000006 :
+    //  jan15 and (dayofmonth == 29) ?  0.38956901200000005 :
+    //  jan15 and (dayofmonth == 30) ?  0.425252815 :
+    //  feb15 and (dayofmonth == 2) ?  0.43107400799999995 :
+    //  feb15 and (dayofmonth == 3) ?  0.40154285700000003 :
+    //  feb15 and (dayofmonth == 4) ?  0.418950359 :
+    //  feb15 and (dayofmonth == 5) ?  0.40168427 :
+    //  feb15 and (dayofmonth == 6) ?  0.41791513 :
+    //  feb15 and (dayofmonth == 9) ?  0.412567371 :
+    //  feb15 and (dayofmonth == 10) ?  0.397392035 :
+    //  feb15 and (dayofmonth == 11) ?  0.421003179 :
+    //  feb15 and (dayofmonth == 12) ?  0.405082255 :
+    //  feb15 and (dayofmonth == 13) ?  0.40086094899999997 :
+    //  feb15 and (dayofmonth == 17) ?  0.384416317 :
+    //  feb15 and (dayofmonth == 18) ?  0.408602742 :
+    //  feb15 and (dayofmonth == 19) ?  0.430727314 :
+    //  feb15 and (dayofmonth == 20) ?  0.409254413 :
+    //  feb15 and (dayofmonth == 23) ?  0.379815505 :
+    //  feb15 and (dayofmonth == 24) ?  0.38685622799999997 :
+    //  feb15 and (dayofmonth == 25) ?  0.393383576 :
+    //  feb15 and (dayofmonth == 26) ?  0.392647452 :
+    //  feb15 and (dayofmonth == 27) ?  0.39096454399999997 :
+    //  mar15 and (dayofmonth == 2) ?  0.393050752 :
+    //  mar15 and (dayofmonth == 3) ?  0.41696747700000003 :
+    //  mar15 and (dayofmonth == 4) ?  0.418046139 :
+    //  mar15 and (dayofmonth == 5) ?  0.40612412200000003 :
+    //  mar15 and (dayofmonth == 6) ?  0.437306204 :
+    //  mar15 and (dayofmonth == 9) ?  0.39202542100000004 :
+    //  mar15 and (dayofmonth == 10) ?  0.416048598 :
+    //  mar15 and (dayofmonth == 11) ?  0.408281839 :
+    //  mar15 and (dayofmonth == 12) ?  0.39402719999999997 :
+    //  mar15 and (dayofmonth == 13) ?  0.435879205 :
+    //  mar15 and (dayofmonth == 16) ?  0.381457604 :
+    //  mar15 and (dayofmonth == 17) ?  0.413796235 :
+    //  mar15 and (dayofmonth == 18) ?  0.42074070799999996 :
+    //  mar15 and (dayofmonth == 19) ?  0.432580955 :
+    //  mar15 and (dayofmonth == 20) ?  0.40733083299999995 :
+    //  mar15 and (dayofmonth == 23) ?  0.385255378 :
+    //  mar15 and (dayofmonth == 24) ?  0.404023136 :
+    //  mar15 and (dayofmonth == 25) ?  0.426293971 :
+    //  mar15 and (dayofmonth == 26) ?  0.410963674 :
+    //  mar15 and (dayofmonth == 27) ?  0.397104612 :
+    //  mar15 and (dayofmonth == 30) ?  0.391228001 :
+    //  mar15 and (dayofmonth == 31) ?  0.41207722700000005 :
+    //  apr15 and (dayofmonth == 1) ?  0.412220418 :
+    //  apr15 and (dayofmonth == 2) ?  0.39847933399999996 :
+    //  apr15 and (dayofmonth == 6) ?  0.393830381 :
+    //  apr15 and (dayofmonth == 7) ?  0.42246086200000005 :
+    //  apr15 and (dayofmonth == 8) ?  0.41544730700000004 :
+    //  apr15 and (dayofmonth == 9) ?  0.40360778399999997 :
+    //  apr15 and (dayofmonth == 10) ?  0.396201697 :
+    //  apr15 and (dayofmonth == 13) ?  0.410255345 :
+    //  apr15 and (dayofmonth == 14) ?  0.421983204 :
+    //  apr15 and (dayofmonth == 15) ?  0.420914595 :
+    //  apr15 and (dayofmonth == 16) ?  0.43693327 :
+    //  apr15 and (dayofmonth == 17) ?  0.47002844 :
+    //  apr15 and (dayofmonth == 20) ?  0.405283745 :
+    //  apr15 and (dayofmonth == 21) ?  0.390417112 :
+    //  apr15 and (dayofmonth == 22) ?  0.41541405299999995 :
+    //  apr15 and (dayofmonth == 23) ?  0.421431732 :
+    //  apr15 and (dayofmonth == 24) ?  0.42064955299999995 :
+    //  apr15 and (dayofmonth == 27) ?  0.39730536299999997 :
+    //  apr15 and (dayofmonth == 28) ?  0.392425764 :
+    //  apr15 and (dayofmonth == 29) ?  0.39964710200000003 :
+    //  apr15 and (dayofmonth == 30) ?  0.42323038700000004 :
+    //  may15 and (dayofmonth == 1) ?  0.403670353 :
+    //  may15 and (dayofmonth == 4) ?  0.411088855 :
+    //  may15 and (dayofmonth == 5) ?  0.42682489 :
+    //  may15 and (dayofmonth == 6) ?  0.433388037 :
+    //  may15 and (dayofmonth == 7) ?  0.394054116 :
+    //  may15 and (dayofmonth == 8) ?  0.38092995 :
+    //  may15 and (dayofmonth == 11) ?  0.42413742 :
+    //  may15 and (dayofmonth == 12) ?  0.43305184799999996 :
+    //  may15 and (dayofmonth == 13) ?  0.410201007 :
+    //  may15 and (dayofmonth == 14) ?  0.410380787 :
+    //  may15 and (dayofmonth == 15) ?  0.437070257 :
+    //  may15 and (dayofmonth == 18) ?  0.42754491299999997 :
+    //  may15 and (dayofmonth == 19) ?  0.40848605200000004 :
+    //  may15 and (dayofmonth == 20) ?  0.41228574799999995 :
+    //  may15 and (dayofmonth == 21) ?  0.41181147700000004 :
+    //  may15 and (dayofmonth == 22) ?  0.414809434 :
+    //  may15 and (dayofmonth == 26) ?  0.419802301 :
+    //  may15 and (dayofmonth == 27) ?  0.396951534 :
+    //  may15 and (dayofmonth == 28) ?  0.424644831 :
+    //  may15 and (dayofmonth == 29) ?  0.446652403 :
+    //  jun15 and (dayofmonth == 1) ?  0.393700609 :
+    //  jun15 and (dayofmonth == 2) ?  0.416315516 :
+    //  jun15 and (dayofmonth == 3) ?  0.41190667 :
+    //  jun15 and (dayofmonth == 4) ?  0.429859428 :
+    //  jun15 and (dayofmonth == 5) ?  0.43544901 :
+    //  jun15 and (dayofmonth == 8) ?  0.398093524 :
+    //  jun15 and (dayofmonth == 9) ?  0.38840321899999997 :
+    //  jun15 and (dayofmonth == 10) ?  0.39108779 :
+    //  jun15 and (dayofmonth == 11) ?  0.398022172 :
+    //  jun15 and (dayofmonth == 12) ?  0.43745872700000005 :
+    //  jun15 and (dayofmonth == 15) ?  0.42851588799999996 :
+    //  jun15 and (dayofmonth == 16) ?  0.412913044 :
+    //  jun15 and (dayofmonth == 17) ?  0.414396363 :
+    //  jun15 and (dayofmonth == 18) ?  0.39295696799999996 :
+    //  jun15 and (dayofmonth == 19) ?  0.42626472299999996 :
+    //  jun15 and (dayofmonth == 22) ?  0.38884137700000004 :
+    //  jun15 and (dayofmonth == 23) ?  0.39609963600000003 :
+    //  jun15 and (dayofmonth == 24) ?  0.409667942 :
+    //  jun15 and (dayofmonth == 25) ?  0.40529260899999997 :
+    //  jun15 and (dayofmonth == 26) ?  0.40217539799999996 :
+    //  jun15 and (dayofmonth == 29) ?  0.43790835899999997 :
+    //  jun15 and (dayofmonth == 30) ?  0.448341472 :
+    //  jul15 and (dayofmonth == 1) ?  0.426969544 :
+    //  jul15 and (dayofmonth == 2) ?  0.44739318899999997 :
+    //  jul15 and (dayofmonth == 6) ?  0.427760236 :
+    //  jul15 and (dayofmonth == 7) ?  0.40610954899999996 :
+    //  jul15 and (dayofmonth == 8) ?  0.41157756700000003 :
+    //  jul15 and (dayofmonth == 9) ?  0.35684888299999995 :
+    //  jul15 and (dayofmonth == 10) ?  0.40140406799999995 :
+    //  jul15 and (dayofmonth == 13) ?  0.412881063 :
+    //  jul15 and (dayofmonth == 14) ?  0.418734347 :
+    //  jul15 and (dayofmonth == 15) ?  0.424573506 :
+    //  jul15 and (dayofmonth == 16) ?  0.410219015 :
+    //  jul15 and (dayofmonth == 17) ?  0.419569939 :
+    //  jul15 and (dayofmonth == 20) ?  0.40904027200000004 :
+    //  jul15 and (dayofmonth == 21) ?  0.422091344 :
+    //  jul15 and (dayofmonth == 22) ?  0.430951225 :
+    //  jul15 and (dayofmonth == 23) ?  0.41136821 :
+    //  jul15 and (dayofmonth == 24) ?  0.392952006 :
+    //  jul15 and (dayofmonth == 27) ?  0.37797439899999996 :
+    //  jul15 and (dayofmonth == 28) ?  0.371115999 :
+    //  jul15 and (dayofmonth == 29) ?  0.39044974200000004 :
+    //  jul15 and (dayofmonth == 30) ?  0.40849323200000004 :
+    //  jul15 and (dayofmonth == 31) ?  0.414557402 :
+    //  aug15 and (dayofmonth == 3) ?  0.409111105 :
+    //  aug15 and (dayofmonth == 4) ?  0.36630707799999995 :
+    //  aug15 and (dayofmonth == 5) ?  0.401164061 :
+    //  aug15 and (dayofmonth == 6) ?  0.386378871 :
+    //  aug15 and (dayofmonth == 7) ?  0.417334096 :
+    //  aug15 and (dayofmonth == 10) ?  0.393317181 :
+    //  aug15 and (dayofmonth == 11) ?  0.408701983 :
+    //  aug15 and (dayofmonth == 12) ?  0.396455389 :
+    //  aug15 and (dayofmonth == 13) ?  0.427726805 :
+    //  aug15 and (dayofmonth == 14) ?  0.42419234 :
+    //  aug15 and (dayofmonth == 17) ?  0.438906421 :
+    //  aug15 and (dayofmonth == 18) ?  0.42133722 :
+    //  aug15 and (dayofmonth == 19) ?  0.43812673399999996 :
+    //  aug15 and (dayofmonth == 20) ?  0.431575418 :
+    //  aug15 and (dayofmonth == 21) ?  0.440896734 :
+    //  aug15 and (dayofmonth == 24) ?  0.42694424 :
+    //  aug15 and (dayofmonth == 25) ?  0.431428741 :
+    //  aug15 and (dayofmonth == 26) ?  0.46338469600000004 :
+    //  aug15 and (dayofmonth == 27) ?  0.44951543 :
+    //  aug15 and (dayofmonth == 28) ?  0.46544935 :
+    //  aug15 and (dayofmonth == 31) ?  0.474038891 :
+    //  sep15 and (dayofmonth == 1) ?  0.513793484 :
+    //  sep15 and (dayofmonth == 2) ?  0.462993131 :
+    //  sep15 and (dayofmonth == 3) ?  0.45493186700000005 :
+    //  sep15 and (dayofmonth == 4) ?  0.4805451 :
+    //  sep15 and (dayofmonth == 8) ?  0.445795987 :
+    //  sep15 and (dayofmonth == 9) ?  0.47957567 :
+    //  sep15 and (dayofmonth == 10) ?  0.455826689 :
+    //  sep15 and (dayofmonth == 11) ?  0.478371758 :
+    //  sep15 and (dayofmonth == 14) ?  0.469194686 :
+    //  sep15 and (dayofmonth == 15) ?  0.43914978299999996 :
+    //  sep15 and (dayofmonth == 16) ?  0.457902066 :
+    //  sep15 and (dayofmonth == 17) ?  0.474562529 :
+    //  sep15 and (dayofmonth == 18) ?  0.5060056279999999 :
+    //  sep15 and (dayofmonth == 21) ?  0.46959324700000005 :
+    //  sep15 and (dayofmonth == 22) ?  0.47920721 :
+    //  sep15 and (dayofmonth == 23) ?  0.46716284799999996 :
+    //  sep15 and (dayofmonth == 24) ?  0.451061179 :
+    //  sep15 and (dayofmonth == 25) ?  0.45626807 :
+    //  sep15 and (dayofmonth == 28) ?  0.42609255 :
+    //  sep15 and (dayofmonth == 29) ?  0.43869831 :
+    //  sep15 and (dayofmonth == 30) ?  0.45608413600000003 :
+    //  oct15 and (dayofmonth == 1) ?  0.486594429 :
+    //  oct15 and (dayofmonth == 2) ?  0.47107403600000003 :
+    //  oct15 and (dayofmonth == 5) ?  0.452516469 :
+    //  oct15 and (dayofmonth == 6) ?  0.452321765 :
+    //  oct15 and (dayofmonth == 7) ?  0.432520766 :
+    //  oct15 and (dayofmonth == 8) ?  0.438177726 :
+    //  oct15 and (dayofmonth == 9) ?  0.436253313 :
+    //  oct15 and (dayofmonth == 12) ?  0.443926826 :
+    //  oct15 and (dayofmonth == 13) ?  0.451541084 :
+    //  oct15 and (dayofmonth == 14) ?  0.459109359 :
+    //  oct15 and (dayofmonth == 15) ?  0.456829916 :
+    //  oct15 and (dayofmonth == 16) ?  0.46212775700000003 :
+    //  oct15 and (dayofmonth == 19) ?  0.45875615299999994 :
+    //  oct15 and (dayofmonth == 20) ?  0.442876506 :
+    //  oct15 and (dayofmonth == 21) ?  0.44549624200000004 :
+    //  oct15 and (dayofmonth == 22) ?  0.401994258 :
+    //  oct15 and (dayofmonth == 23) ?  0.434201007 :
+    //  oct15 and (dayofmonth == 26) ?  0.444942099 :
+    //  oct15 and (dayofmonth == 27) ?  0.440911437 :
+    //  oct15 and (dayofmonth == 28) ?  0.42743256799999996 :
+    //  oct15 and (dayofmonth == 29) ?  0.443989872 :
+    //  oct15 and (dayofmonth == 30) ?  0.430729295 :
+    //  nov15 and (dayofmonth == 2) ?  0.432327478 :
+    //  nov15 and (dayofmonth == 3) ?  0.436478911 :
+    //  nov15 and (dayofmonth == 4) ?  0.44930069 :
+    //  nov15 and (dayofmonth == 5) ?  0.431229299 :
+    //  nov15 and (dayofmonth == 6) ?  0.445625255 :
+    //  nov15 and (dayofmonth == 9) ?  0.464286318 :
+    //  nov15 and (dayofmonth == 10) ?  0.42287974100000003 :
+    //  nov15 and (dayofmonth == 11) ?  0.42360705200000004 :
+    //  nov15 and (dayofmonth == 12) ?  0.45869043 :
+    //  nov15 and (dayofmonth == 13) ?  0.444630051 :
+    //  nov15 and (dayofmonth == 16) ?  0.432936088 :
+    //  nov15 and (dayofmonth == 17) ?  0.451291481 :
+    //  nov15 and (dayofmonth == 18) ?  0.41754548 :
+    //  nov15 and (dayofmonth == 19) ?  0.431942007 :
+    //  nov15 and (dayofmonth == 20) ?  0.437069063 :
+    //  nov15 and (dayofmonth == 23) ?  0.423119416 :
+    //  nov15 and (dayofmonth == 24) ?  0.413855116 :
+    //  nov15 and (dayofmonth == 25) ?  0.42245945700000004 :
+    //  nov15 and (dayofmonth == 27) ?  0.43157252700000004 :
+    //  nov15 and (dayofmonth == 30) ?  0.429763736 :
+    //  dec15 and (dayofmonth == 1) ?  0.423868299 :
+    //  dec15 and (dayofmonth == 2) ?  0.43201226 :
+    //  dec15 and (dayofmonth == 3) ?  0.434722579 :
+    //  dec15 and (dayofmonth == 4) ?  0.417115481 :
+    //  dec15 and (dayofmonth == 7) ?  0.432052063 :
+    //  dec15 and (dayofmonth == 8) ?  0.43065780600000003 :
+    //  dec15 and (dayofmonth == 9) ?  0.447071911 :
+    //  dec15 and (dayofmonth == 10) ?  0.42071607 :
+    //  dec15 and (dayofmonth == 11) ?  0.446561876 :
+    //  dec15 and (dayofmonth == 14) ?  0.402805432 :
+    //  dec15 and (dayofmonth == 15) ?  0.379995167 :
+    //  dec15 and (dayofmonth == 16) ?  0.397225823 :
+    //  dec15 and (dayofmonth == 17) ?  0.44075831299999996 :
+    //  dec15 and (dayofmonth == 18) ?  0.45417277100000003 :
+    //  dec15 and (dayofmonth == 21) ?  0.42688486299999995 :
+    //  dec15 and (dayofmonth == 22) ?  0.42866389299999996 :
+    //  dec15 and (dayofmonth == 23) ?  0.411390672 :
+    //  dec15 and (dayofmonth == 24) ?  0.42922477200000003 :
+    //  dec15 and (dayofmonth == 28) ?  0.45128133 :
+    //  dec15 and (dayofmonth == 29) ?  0.420889004 :
+    //  dec15 and (dayofmonth == 30) ?  0.441124113 :
+    //  dec15 and (dayofmonth == 31) ?  0.475102518 :
+    //  jan16 and (dayofmonth == 4) ?  0.49290229399999996 :
+    //  jan16 and (dayofmonth == 5) ?  0.45615276200000004 :
+    //  jan16 and (dayofmonth == 6) ?  0.438569531 :
+    //  jan16 and (dayofmonth == 7) ?  0.44122173299999995 :
+    //  jan16 and (dayofmonth == 8) ?  0.45048802200000004 :
+    //  jan16 and (dayofmonth == 11) ?  0.43414216899999997 :
+    //  jan16 and (dayofmonth == 12) ?  0.454451741 :
+    //  jan16 and (dayofmonth == 13) ?  0.479670256 :
+    //  jan16 and (dayofmonth == 14) ?  0.44838409100000004 :
+    //  jan16 and (dayofmonth == 15) ?  0.473986609 :
+    //  jan16 and (dayofmonth == 19) ?  0.424265555 :
+    //  jan16 and (dayofmonth == 20) ?  0.437330571 :
+    //  jan16 and (dayofmonth == 21) ?  0.464422006 :
+    //  jan16 and (dayofmonth == 22) ?  0.460116865 :
+    //  jan16 and (dayofmonth == 25) ?  0.489102043 :
+    //  jan16 and (dayofmonth == 26) ?  0.470502565 :
+    //  jan16 and (dayofmonth == 27) ?  0.47538267799999995 :
+    //  jan16 and (dayofmonth == 28) ?  0.44742991200000004 :
+    //  jan16 and (dayofmonth == 29) ?  0.442943336 :
+    //  feb16 and (dayofmonth == 1) ?  0.47047582600000004 :
+    //  feb16 and (dayofmonth == 2) ?  0.492497694 :
+    //  feb16 and (dayofmonth == 3) ?  0.46493863799999996 :
+    //  feb16 and (dayofmonth == 4) ?  0.455520782 :
+    //  feb16 and (dayofmonth == 5) ?  0.442531574 :
+    //  feb16 and (dayofmonth == 8) ?  0.422530303 :
+    //  feb16 and (dayofmonth == 9) ?  0.443606603 :
+    //  feb16 and (dayofmonth == 10) ?  0.47062630299999997 :
+    //  feb16 and (dayofmonth == 11) ?  0.459194813 :
+    //  feb16 and (dayofmonth == 12) ?  0.44932810100000004 :
+    //  feb16 and (dayofmonth == 16) ?  0.44188963299999995 :
+    //  feb16 and (dayofmonth == 17) ?  0.44071825200000003 :
+    //  feb16 and (dayofmonth == 18) ?  0.45985488399999996 :
+    //  feb16 and (dayofmonth == 19) ?  0.479824669 :
+    //  feb16 and (dayofmonth == 22) ?  0.431894585 :
+    //  feb16 and (dayofmonth == 23) ?  0.44479568399999997 :
+    //  feb16 and (dayofmonth == 24) ?  0.468365363 :
+    //  feb16 and (dayofmonth == 25) ?  0.44266518299999996 :
+    //  feb16 and (dayofmonth == 26) ?  0.44809160299999995 :
+    //  feb16 and (dayofmonth == 29) ?  0.443848698 :
+    //  mar16 and (dayofmonth == 1) ?  0.42174797299999994 :
+    //  mar16 and (dayofmonth == 2) ?  0.43754608799999994 :
+    //  mar16 and (dayofmonth == 3) ?  0.43668458 :
+    //  mar16 and (dayofmonth == 4) ?  0.43760163700000004 :
+    //  mar16 and (dayofmonth == 7) ?  0.437400064 :
+    //  mar16 and (dayofmonth == 8) ?  0.458243687 :
+    //  mar16 and (dayofmonth == 9) ?  0.444190364 :
+    //  mar16 and (dayofmonth == 10) ?  0.463336591 :
+    //  mar16 and (dayofmonth == 11) ?  0.41450384 :
+    //  mar16 and (dayofmonth == 14) ?  0.459795405 :
+    //  mar16 and (dayofmonth == 15) ?  0.45486803200000003 :
+    //  mar16 and (dayofmonth == 16) ?  0.46020955700000005 :
+    //  mar16 and (dayofmonth == 17) ?  0.42577342100000004 :
+    //  mar16 and (dayofmonth == 18) ?  0.422041812 :
+    //  mar16 and (dayofmonth == 21) ?  0.42319891 :
+    //  mar16 and (dayofmonth == 22) ?  0.425370509 :
+    //  mar16 and (dayofmonth == 23) ?  0.443948161 :
+    //  mar16 and (dayofmonth == 24) ?  0.463185743 :
+    //  mar16 and (dayofmonth == 28) ?  0.437740564 :
+    //  mar16 and (dayofmonth == 29) ?  0.45338937799999995 :
+    //  mar16 and (dayofmonth == 30) ?  0.447184297 :
+    //  mar16 and (dayofmonth == 31) ?  0.443976628 :
+    //  apr16 and (dayofmonth == 1) ?  0.44600037299999995 :
+    //  apr16 and (dayofmonth == 4) ?  0.44451822700000004 :
+    //  apr16 and (dayofmonth == 5) ?  0.44097910700000004 :
+    //  apr16 and (dayofmonth == 6) ?  0.42509224 :
+    //  apr16 and (dayofmonth == 7) ?  0.47403146 :
+    //  apr16 and (dayofmonth == 8) ?  0.45060233200000005 :
+    //  apr16 and (dayofmonth == 11) ?  0.43772653100000003 :
+    //  apr16 and (dayofmonth == 12) ?  0.42087427 :
+    //  apr16 and (dayofmonth == 13) ?  0.43622264200000005 :
+    //  apr16 and (dayofmonth == 14) ?  0.43057817600000003 :
+    //  apr16 and (dayofmonth == 15) ?  0.454193855 :
+    //  apr16 and (dayofmonth == 18) ?  0.422089382 :
+    //  apr16 and (dayofmonth == 19) ?  0.427862244 :
+    //  apr16 and (dayofmonth == 20) ?  0.41499731100000004 :
+    //  apr16 and (dayofmonth == 21) ?  0.40879304299999997 :
+    //  apr16 and (dayofmonth == 22) ?  0.42669891299999996 :
+    //  apr16 and (dayofmonth == 25) ?  0.418551875 :
+    //  apr16 and (dayofmonth == 26) ?  0.41243112600000004 :
+    //  apr16 and (dayofmonth == 27) ?  0.422620402 :
+    //  apr16 and (dayofmonth == 28) ?  0.429197891 :
+    //  apr16 and (dayofmonth == 29) ?  0.448883727 :
+    //  may16 and (dayofmonth == 2) ?  0.42659853 :
+    //  may16 and (dayofmonth == 3) ?  0.45078296100000004 :
+    //  may16 and (dayofmonth == 4) ?  0.45637519 :
+    //  may16 and (dayofmonth == 5) ?  0.46503525700000004 :
+    //  may16 and (dayofmonth == 6) ?  0.43358295 :
+    //  may16 and (dayofmonth == 9) ?  0.460312754 :
+    //  may16 and (dayofmonth == 10) ?  0.442543808 :
+    //  may16 and (dayofmonth == 11) ?  0.477911245 :
+    //  may16 and (dayofmonth == 12) ?  0.44118674 :
+    //  may16 and (dayofmonth == 13) ?  0.438414817 :
+    //  may16 and (dayofmonth == 16) ?  0.43866066 :
+    //  may16 and (dayofmonth == 17) ?  0.47840087200000003 :
+    //  may16 and (dayofmonth == 18) ?  0.463532103 :
+    //  may16 and (dayofmonth == 19) ?  0.461414593 :
+    //  may16 and (dayofmonth == 20) ?  0.46068253200000003 :
+    //  may16 and (dayofmonth == 23) ?  0.44700372200000005 :
+    //  may16 and (dayofmonth == 24) ?  0.40119967799999995 :
+    //  may16 and (dayofmonth == 25) ?  0.433918686 :
+    //  may16 and (dayofmonth == 26) ?  0.443469037 :
+    //  may16 and (dayofmonth == 27) ?  0.423957934 :
+    //  may16 and (dayofmonth == 31) ?  0.44109788899999997 :
+    //  jun16 and (dayofmonth == 1) ?  0.43203601700000005 :
+    //  jun16 and (dayofmonth == 2) ?  0.420858444 :
+    //  jun16 and (dayofmonth == 3) ?  0.457608375 :
+    //  jun16 and (dayofmonth == 6) ?  0.42234886299999996 :
+    //  jun16 and (dayofmonth == 7) ?  0.41298851799999997 :
+    //  jun16 and (dayofmonth == 8) ?  0.40811582700000004 :
+    //  jun16 and (dayofmonth == 9) ?  0.428690604 :
+    //  jun16 and (dayofmonth == 10) ?  0.47027715 :
+    //  jun16 and (dayofmonth == 13) ?  0.44138175399999996 :
+    //  jun16 and (dayofmonth == 14) ?  0.418567198 :
+    //  jun16 and (dayofmonth == 15) ?  0.434682536 :
+    //  jun16 and (dayofmonth == 16) ?  0.43112514799999996 :
+    //  jun16 and (dayofmonth == 17) ?  0.446232976 :
+    //  jun16 and (dayofmonth == 20) ?  0.393791396 :
+    //  jun16 and (dayofmonth == 21) ?  0.40690867399999997 :
+    //  jun16 and (dayofmonth == 22) ?  0.41246642899999997 :
+    //  jun16 and (dayofmonth == 23) ?  0.411952727 :
+    //  jun16 and (dayofmonth == 24) ?  0.465282666 :
+    //  jun16 and (dayofmonth == 27) ?  0.410988343 :
+    //  jun16 and (dayofmonth == 28) ?  0.426925255 :
+    //  jun16 and (dayofmonth == 29) ?  0.43496292299999995 :
+    //  jun16 and (dayofmonth == 30) ?  0.419785885 :
+    //  jul16 and (dayofmonth == 1) ?  0.41626565299999996 :
+    //  jul16 and (dayofmonth == 5) ?  0.44524204799999995 :
+    //  jul16 and (dayofmonth == 6) ?  0.41128605700000004 :
+    //  jul16 and (dayofmonth == 7) ?  0.43130276700000003 :
+    //  jul16 and (dayofmonth == 8) ?  0.397013867 :
+    //  jul16 and (dayofmonth == 11) ?  0.401994426 :
+    //  jul16 and (dayofmonth == 12) ?  0.398662425 :
+    //  jul16 and (dayofmonth == 13) ?  0.403261087 :
+    //  jul16 and (dayofmonth == 14) ?  0.398326558 :
+    //  jul16 and (dayofmonth == 15) ?  0.410285164 :
+    //  jul16 and (dayofmonth == 18) ?  0.389320565 :
+    //  jul16 and (dayofmonth == 19) ?  0.402348439 :
+    //  jul16 and (dayofmonth == 20) ?  0.40348852 :
+    //  jul16 and (dayofmonth == 21) ?  0.40597588700000004 :
+    //  jul16 and (dayofmonth == 22) ?  0.411136806 :
+    //  jul16 and (dayofmonth == 25) ?  0.38942084299999996 :
+    //  jul16 and (dayofmonth == 26) ?  0.393701839 :
+    //  jul16 and (dayofmonth == 27) ?  0.39798991899999997 :
+    //  jul16 and (dayofmonth == 28) ?  0.407462151 :
+    //  jul16 and (dayofmonth == 29) ?  0.420351401 :
+    //  aug16 and (dayofmonth == 1) ?  0.41273591600000004 :
+    //  aug16 and (dayofmonth == 2) ?  0.43000884899999997 :
+    //  aug16 and (dayofmonth == 3) ?  0.441997473 :
+    //  aug16 and (dayofmonth == 4) ?  0.42506035799999997 :
+    //  aug16 and (dayofmonth == 8) ?  0.412822614 :
+    //  aug16 and (dayofmonth == 9) ?  0.414925274 :
+    //  aug16 and (dayofmonth == 10) ?  0.41924128 :
+    //  aug16 and (dayofmonth == 11) ?  0.400013855 :
+    //  aug16 and (dayofmonth == 12) ?  0.41664541299999996 :
+    //  aug16 and (dayofmonth == 15) ?  0.391054114 :
+    //  aug16 and (dayofmonth == 16) ?  0.412726958 :
+    //  aug16 and (dayofmonth == 17) ?  0.404956434 :
+    //  aug16 and (dayofmonth == 18) ?  0.41459836899999997 :
+    //  aug16 and (dayofmonth == 19) ?  0.41795889 :
+    //  aug16 and (dayofmonth == 22) ?  0.384853955 :
+    //  aug16 and (dayofmonth == 23) ?  0.39031150299999995 :
+    //  aug16 and (dayofmonth == 24) ?  0.41805251200000004 :
+    //  aug16 and (dayofmonth == 25) ?  0.422938803 :
+    //  aug16 and (dayofmonth == 26) ?  0.43498974700000004 :
+    //  aug16 and (dayofmonth == 29) ?  0.409401255 :
+    //  aug16 and (dayofmonth == 30) ?  0.421011862 :
+    //  aug16 and (dayofmonth == 31) ?  0.41739250200000005 :
+    //  sep16 and (dayofmonth == 1) ?  0.433967347 :
+    //  sep16 and (dayofmonth == 2) ?  0.426141065 :
+    //  sep16 and (dayofmonth == 6) ?  0.44193152 :
+    //  sep16 and (dayofmonth == 7) ?  0.45669156299999997 :
+    //  sep16 and (dayofmonth == 8) ?  0.441089756 :
+    //  sep16 and (dayofmonth == 9) ?  0.485356719 :
+    //  sep16 and (dayofmonth == 12) ?  0.41588964799999995 :
+    //  sep16 and (dayofmonth == 13) ?  0.47237633799999995 :
+    //  sep16 and (dayofmonth == 14) ?  0.45434932299999997 :
+    //  sep16 and (dayofmonth == 15) ?  0.43648888799999996 :
+    //  sep16 and (dayofmonth == 16) ?  0.49259321 :
+    //  sep16 and (dayofmonth == 19) ?  0.441445844 :
+    //  sep16 and (dayofmonth == 20) ?  0.469373356 :
+    //  sep16 and (dayofmonth == 21) ?  0.447373808 :
+    //  sep16 and (dayofmonth == 22) ?  0.434221221 :
+    //  sep16 and (dayofmonth == 23) ?  0.449445484 :
+    //  sep16 and (dayofmonth == 26) ?  0.459214743 :
+    //  sep16 and (dayofmonth == 27) ?  0.433278513 :
+    //  sep16 and (dayofmonth == 28) ?  0.480763302 :
+    //  sep16 and (dayofmonth == 29) ?  0.481161475 :
+    //  sep16 and (dayofmonth == 30) ?  0.41216523 :
+    //  oct16 and (dayofmonth == 3) ?  0.491606415 :
+    //  oct16 and (dayofmonth == 4) ?  0.486275774 :
+    //  oct16 and (dayofmonth == 5) ?  0.464550019 :
+    //  oct16 and (dayofmonth == 6) ?  0.45176050100000004 :
+    //  oct16 and (dayofmonth == 7) ?  0.466306106 :
+    //  oct16 and (dayofmonth == 10) ?  0.41310820000000004 :
+    //  oct16 and (dayofmonth == 11) ?  0.48797685799999996 :
+    //  oct16 and (dayofmonth == 12) ?  0.438016719 :
+    //  oct16 and (dayofmonth == 13) ?  0.45791595799999996 :
+    //  oct16 and (dayofmonth == 14) ?  0.458850301 :
+    //  oct16 and (dayofmonth == 17) ?  0.442259435 :
+    //  oct16 and (dayofmonth == 18) ?  0.45774606100000004 :
+    //  oct16 and (dayofmonth == 19) ?  0.46657175799999995 :
+    //  oct16 and (dayofmonth == 20) ?  0.47614481299999994 :
+    //  oct16 and (dayofmonth == 21) ?  0.461491872 :
+    //  oct16 and (dayofmonth == 24) ?  0.45977930200000006 :
+    //  oct16 and (dayofmonth == 25) ?  0.43807632700000004 :
+    //  oct16 and (dayofmonth == 26) ?  0.459614305 :
+    //  oct16 and (dayofmonth == 27) ?  0.45034197200000003 :
+    //  oct16 and (dayofmonth == 28) ?  0.438511916 :
+    //  oct16 and (dayofmonth == 31) ?  0.45103845200000003 :
+    //  nov16 and (dayofmonth == 1) ?  0.450684385 :
+    //  nov16 and (dayofmonth == 2) ?  0.444756685 :
+    //  nov16 and (dayofmonth == 3) ?  0.455304361 :
+    //  nov16 and (dayofmonth == 4) ?  0.44273145399999997 :
+    //  nov16 and (dayofmonth == 7) ?  0.41089612299999995 :
+    //  nov16 and (dayofmonth == 8) ?  0.430407188 :
+    //  nov16 and (dayofmonth == 9) ?  0.445400568 :
+    //  nov16 and (dayofmonth == 10) ?  0.44238409100000003 :
+    //  nov16 and (dayofmonth == 11) ?  0.43258251799999997 :
+    //  nov16 and (dayofmonth == 14) ?  0.43212931200000004 :
+    //  nov16 and (dayofmonth == 15) ?  0.424198164 :
+    //  nov16 and (dayofmonth == 16) ?  0.452437324 :
+    //  nov16 and (dayofmonth == 17) ?  0.44950317 :
+    //  nov16 and (dayofmonth == 18) ?  0.45407157600000003 :
+    //  nov16 and (dayofmonth == 21) ?  0.433355365 :
+    //  nov16 and (dayofmonth == 22) ?  0.43362001299999997 :
+    //  nov16 and (dayofmonth == 23) ?  0.434332568 :
+    //  nov16 and (dayofmonth == 25) ?  0.46271356799999996 :
+    //  nov16 and (dayofmonth == 28) ?  0.420242203 :
+    //  nov16 and (dayofmonth == 29) ?  0.418964479 :
+    //  nov16 and (dayofmonth == 30) ?  0.44724199 :
+    //  dec16 and (dayofmonth == 1) ?  0.447618817 :
+    //  dec16 and (dayofmonth == 2) ?  0.436378386 :
+    //  dec16 and (dayofmonth == 5) ?  0.423944715 :
+    //  dec16 and (dayofmonth == 6) ?  0.425363096 :
+    //  dec16 and (dayofmonth == 7) ?  0.42450339 :
+    //  dec16 and (dayofmonth == 8) ?  0.420890007 :
+    //  dec16 and (dayofmonth == 9) ?  0.41454469299999996 :
+    //  dec16 and (dayofmonth == 12) ?  0.425341742 :
+    //  dec16 and (dayofmonth == 13) ?  0.42595697899999996 :
+    //  dec16 and (dayofmonth == 14) ?  0.462885028 :
+    //  dec16 and (dayofmonth == 15) ?  0.443190281 :
+    //  dec16 and (dayofmonth == 16) ?  0.448954818 :
+    //  dec16 and (dayofmonth == 19) ?  0.41745295200000004 :
+    //  dec16 and (dayofmonth == 20) ?  0.415901409 :
+    //  dec16 and (dayofmonth == 21) ?  0.436414751 :
+    //  dec16 and (dayofmonth == 22) ?  0.43770496600000003 :
+    //  dec16 and (dayofmonth == 23) ?  0.431496871 :
+    //  dec16 and (dayofmonth == 27) ?  0.44398714100000003 :
+    //  dec16 and (dayofmonth == 28) ?  0.471166345 :
+    //  dec16 and (dayofmonth == 29) ?  0.455021694 :
+    //  dec16 and (dayofmonth == 30) ?  0.462483771 :
+    //  jan17 and (dayofmonth == 3) ?  0.419044074 :
+    //  jan17 and (dayofmonth == 4) ?  0.447651229 :
+    //  jan17 and (dayofmonth == 5) ?  0.456314381 :
+    //  jan17 and (dayofmonth == 6) ?  0.432638321 :
+    //  jan17 and (dayofmonth == 9) ?  0.44501412 :
+    //  jan17 and (dayofmonth == 10) ?  0.446320571 :
+    //  jan17 and (dayofmonth == 11) ?  0.45431923399999996 :
+    //  jan17 and (dayofmonth == 12) ?  0.438331391 :
+    //  jan17 and (dayofmonth == 13) ?  0.458904586 :
+    //  jan17 and (dayofmonth == 17) ?  0.454038612 :
+    //  jan17 and (dayofmonth == 18) ?  0.435874903 :
+    //  jan17 and (dayofmonth == 19) ?  0.441959069 :
+    //  jan17 and (dayofmonth == 20) ?  0.436632488 :
+    //  jan17 and (dayofmonth == 23) ?  0.431358973 :
+    //  jan17 and (dayofmonth == 24) ?  0.42747122600000004 :
+    //  jan17 and (dayofmonth == 25) ?  0.428454691 :
+    //  jan17 and (dayofmonth == 26) ?  0.426885818 :
+    //  jan17 and (dayofmonth == 27) ?  0.44171405 :
+    //  jan17 and (dayofmonth == 30) ?  0.419890131 :
+    //  jan17 and (dayofmonth == 31) ?  0.428198711 :
+    //  feb17 and (dayofmonth == 1) ?  0.44232068399999996 :
+    //  feb17 and (dayofmonth == 2) ?  0.42278856299999995 :
+    //  feb17 and (dayofmonth == 3) ?  0.43629843799999996 :
+    //  feb17 and (dayofmonth == 6) ?  0.441742456 :
+    //  feb17 and (dayofmonth == 7) ?  0.46039304799999997 :
+    //  feb17 and (dayofmonth == 8) ?  0.43899275600000004 :
+    //  feb17 and (dayofmonth == 9) ?  0.447449751 :
+    //  feb17 and (dayofmonth == 10) ?  0.43525808299999996 :
+    //  feb17 and (dayofmonth == 13) ?  0.42255220600000004 :
+    //  feb17 and (dayofmonth == 14) ?  0.423784902 :
+    //  feb17 and (dayofmonth == 15) ?  0.439635395 :
+    //  feb17 and (dayofmonth == 16) ?  0.44063801700000005 :
+    //  feb17 and (dayofmonth == 17) ?  0.436034067 :
+    //  feb17 and (dayofmonth == 21) ?  0.422297486 :
+    //  feb17 and (dayofmonth == 22) ?  0.427524674 :
+    //  feb17 and (dayofmonth == 23) ?  0.44106409700000004 :
+    //  feb17 and (dayofmonth == 24) ?  0.42695812200000005 :
+    //  feb17 and (dayofmonth == 27) ?  0.43401755799999997 :
+    //  feb17 and (dayofmonth == 28) ?  0.43135493 :
+    //  mar17 and (dayofmonth == 1) ?  0.40271095 :
+    //  mar17 and (dayofmonth == 2) ?  0.458811711 :
+    //  mar17 and (dayofmonth == 3) ?  0.472739996 :
+    //  mar17 and (dayofmonth == 6) ?  0.443608724 :
+    //  mar17 and (dayofmonth == 7) ?  0.46411063700000005 :
+    //  mar17 and (dayofmonth == 8) ?  0.44757381700000004 :
+    //  mar17 and (dayofmonth == 9) ?  0.43860231200000005 :
+    //  mar17 and (dayofmonth == 10) ?  0.43778325 :
+    //  mar17 and (dayofmonth == 13) ?  0.439502967 :
+    //  mar17 and (dayofmonth == 14) ?  0.44612599700000005 :
+    //  mar17 and (dayofmonth == 15) ?  0.45151805 :
+    //  mar17 and (dayofmonth == 16) ?  0.448376468 :
+    //  mar17 and (dayofmonth == 17) ?  0.468815015 :
+    //  mar17 and (dayofmonth == 20) ?  0.43621284200000005 :
+    //  mar17 and (dayofmonth == 21) ?  0.44582757799999995 :
+    //  mar17 and (dayofmonth == 22) ?  0.41340589200000005 :
+    //  mar17 and (dayofmonth == 23) ?  0.43543870799999995 :
+    //  mar17 and (dayofmonth == 24) ?  0.443039819 :
+    //  mar17 and (dayofmonth == 27) ?  0.420953291 :
+    //  mar17 and (dayofmonth == 28) ?  0.41924132399999997 :
+    //  mar17 and (dayofmonth == 29) ?  0.448391711 :
+    //  mar17 and (dayofmonth == 30) ?  0.447035932 :
+    //  mar17 and (dayofmonth == 31) ?  0.44170979 :
+    //  apr17 and (dayofmonth == 3) ?  0.46847190200000005 :
+    //  apr17 and (dayofmonth == 4) ?  0.43086015299999997 :
+    //  apr17 and (dayofmonth == 5) ?  0.447498081 :
+    //  apr17 and (dayofmonth == 6) ?  0.443262496 :
+    //  apr17 and (dayofmonth == 7) ?  0.43378735 :
+    //  apr17 and (dayofmonth == 10) ?  0.44331705 :
+    //  apr17 and (dayofmonth == 11) ?  0.45626487200000004 :
+    //  apr17 and (dayofmonth == 12) ?  0.419695229 :
+    //  apr17 and (dayofmonth == 13) ?  0.433157833 :
+    //  apr17 and (dayofmonth == 17) ?  0.437827158 :
+    //  apr17 and (dayofmonth == 18) ?  0.480253146 :
+    //  apr17 and (dayofmonth == 19) ?  0.462372295 :
+    //  apr17 and (dayofmonth == 20) ?  0.45363212 :
+    //  apr17 and (dayofmonth == 21) ?  0.46471793899999997 :
+    //  apr17 and (dayofmonth == 24) ?  0.399983938 :
+    //  apr17 and (dayofmonth == 25) ?  0.432501904 :
+    //  apr17 and (dayofmonth == 26) ?  0.44643763200000003 :
+    //  apr17 and (dayofmonth == 27) ?  0.448391925 :
+    //  apr17 and (dayofmonth == 28) ?  0.45972748 :
+    //  may17 and (dayofmonth == 1) ?  0.457717321 :
+    //  may17 and (dayofmonth == 2) ?  0.450856824 :
+    //  may17 and (dayofmonth == 3) ?  0.44622073100000004 :
+    //  may17 and (dayofmonth == 4) ?  0.455712338 :
+    //  may17 and (dayofmonth == 5) ?  0.430111819 :
+    //  may17 and (dayofmonth == 8) ?  0.43444199 :
+    //  may17 and (dayofmonth == 9) ?  0.42823247600000003 :
+    //  may17 and (dayofmonth == 10) ?  0.430030356 :
+    //  may17 and (dayofmonth == 11) ?  0.41880369100000003 :
+    //  may17 and (dayofmonth == 12) ?  0.44822920299999996 :
+    //  may17 and (dayofmonth == 15) ?  0.427285829 :
+    //  may17 and (dayofmonth == 16) ?  0.438618889 :
+    //  may17 and (dayofmonth == 17) ?  0.441798696 :
+    //  may17 and (dayofmonth == 18) ?  0.431309978 :
+    //  may17 and (dayofmonth == 19) ?  0.42130351899999996 :
+    //  may17 and (dayofmonth == 22) ?  0.401591109 :
+    //  may17 and (dayofmonth == 23) ?  0.406205353 :
+    //  may17 and (dayofmonth == 24) ?  0.406951138 :
+    //  may17 and (dayofmonth == 25) ?  0.40179138700000006 :
+    //  may17 and (dayofmonth == 26) ?  0.395214203 :
+    //  may17 and (dayofmonth == 30) ?  0.39681944799999996 :
+    //  may17 and (dayofmonth == 31) ?  0.41566934299999997 :
+    //  jun17 and (dayofmonth == 1) ?  0.41176641 :
+    //  jun17 and (dayofmonth == 2) ?  0.39486666 :
+    //  jun17 and (dayofmonth == 5) ?  0.42711514 :
+    //  jun17 and (dayofmonth == 6) ?  0.421426721 :
+    //  jun17 and (dayofmonth == 7) ?  0.41780087 :
+    //  jun17 and (dayofmonth == 8) ?  0.41576724 :
+    //  jun17 and (dayofmonth == 9) ?  0.43020075799999996 :
+    //  jun17 and (dayofmonth == 12) ?  0.39355298200000005 :
+    //  jun17 and (dayofmonth == 13) ?  0.44041644 :
+    //  jun17 and (dayofmonth == 14) ?  0.454407391 :
+    //  jun17 and (dayofmonth == 15) ?  0.430378851 :
+    //  jun17 and (dayofmonth == 16) ?  0.447624983 :
+    //  jun17 and (dayofmonth == 19) ?  0.417100841 :
+    //  jun17 and (dayofmonth == 20) ?  0.424535294 :
+    //  jun17 and (dayofmonth == 21) ?  0.420796956 :
+    //  jun17 and (dayofmonth == 22) ?  0.422974597 :
+    //  jun17 and (dayofmonth == 23) ?  0.42750674200000005 :
+    //  jun17 and (dayofmonth == 26) ?  0.417956668 :
+    //  jun17 and (dayofmonth == 27) ?  0.416977416 :
+    //  jun17 and (dayofmonth == 28) ?  0.406576196 :
+    //  jun17 and (dayofmonth == 29) ?  0.432566526 :
+    //  jun17 and (dayofmonth == 30) ?  0.412161331 :
+    //  jul17 and (dayofmonth == 3) ?  0.415519636 :
+    //  jul17 and (dayofmonth == 5) ?  0.391467275 :
+    //  jul17 and (dayofmonth == 6) ?  0.412950349 :
+    //  jul17 and (dayofmonth == 7) ?  0.41142997 :
+    //  jul17 and (dayofmonth == 10) ?  0.440324654 :
+    //  jul17 and (dayofmonth == 11) ?  0.43129677899999996 :
+    //  jul17 and (dayofmonth == 12) ?  0.41246226399999997 :
+    //  jul17 and (dayofmonth == 13) ?  0.426097791 :
+    //  jul17 and (dayofmonth == 14) ?  0.413885968 :
+    //  jul17 and (dayofmonth == 17) ?  0.42463602 :
+    //  jul17 and (dayofmonth == 18) ?  0.44003877700000005 :
+    //  jul17 and (dayofmonth == 19) ?  0.43478925399999996 :
+    //  jul17 and (dayofmonth == 20) ?  0.42721446700000004 :
+    //  jul17 and (dayofmonth == 21) ?  0.412826811 :
+    //  jul17 and (dayofmonth == 24) ?  0.38487519 :
+    //  jul17 and (dayofmonth == 25) ?  0.402832322 :
+    //  jul17 and (dayofmonth == 26) ?  0.423717577 :
+    //  jul17 and (dayofmonth == 27) ?  0.434130384 :
+    //  jul17 and (dayofmonth == 28) ?  0.417921255 :
+    //  jul17 and (dayofmonth == 31) ?  0.391138812 :
+    //  aug17 and (dayofmonth == 1) ?  0.39266126100000004 :
+    //  aug17 and (dayofmonth == 2) ?  0.39494799 :
+    //  aug17 and (dayofmonth == 3) ?  0.39644154600000003 :
+    //  aug17 and (dayofmonth == 4) ?  0.401827095 :
+    //  aug17 and (dayofmonth == 7) ?  0.39823116399999997 :
+    //  aug17 and (dayofmonth == 8) ?  0.405327106 :
+    //  aug17 and (dayofmonth == 9) ?  0.39949057 :
+    //  aug17 and (dayofmonth == 10) ?  0.39269888 :
+    //  aug17 and (dayofmonth == 11) ?  0.40071184600000004 :
+    //  aug17 and (dayofmonth == 14) ?  0.406275254 :
+    //  aug17 and (dayofmonth == 15) ?  0.415967044 :
+    //  aug17 and (dayofmonth == 16) ?  0.40418785399999996 :
+    //  aug17 and (dayofmonth == 17) ?  0.43799189899999996 :
+    //  aug17 and (dayofmonth == 18) ?  0.42503069 :
+    //  aug17 and (dayofmonth == 21) ?  0.390280189 :
+    //  aug17 and (dayofmonth == 22) ?  0.39030999 :
+    //  aug17 and (dayofmonth == 23) ?  0.409688255 :
+    //  aug17 and (dayofmonth == 24) ?  0.395916275 :
+    //  aug17 and (dayofmonth == 25) ?  0.41978766700000003 :
+    //  aug17 and (dayofmonth == 28) ?  0.413433771 :
+    //  aug17 and (dayofmonth == 29) ?  0.421705373 :
+    //  aug17 and (dayofmonth == 30) ?  0.424532862 :
+    //  aug17 and (dayofmonth == 31) ?  0.43465614 :
+    //  sep17 and (dayofmonth == 1) ?  0.436810761 :
+    //  sep17 and (dayofmonth == 5) ?  0.418397116 :
+    //  sep17 and (dayofmonth == 6) ?  0.413845288 :
+    //  sep17 and (dayofmonth == 7) ?  0.412572161 :
+    //  sep17 and (dayofmonth == 8) ?  0.41066654700000005 :
+    //  sep17 and (dayofmonth == 11) ?  0.387100878 :
+    //  sep17 and (dayofmonth == 12) ?  0.42141478 :
+    //  sep17 and (dayofmonth == 13) ?  0.41081358700000004 :
+    //  sep17 and (dayofmonth == 14) ?  0.417555293 :
+    //  sep17 and (dayofmonth == 15) ?  0.41978611600000004 :
+    //  sep17 and (dayofmonth == 18) ?  0.391772344 :
+    //  sep17 and (dayofmonth == 19) ?  0.39247693899999997 :
+    //  sep17 and (dayofmonth == 20) ?  0.408270665 :
+    //  sep17 and (dayofmonth == 21) ?  0.389327729 :
+    //  sep17 and (dayofmonth == 22) ?  0.38379506700000005 :
+    //  sep17 and (dayofmonth == 25) ?  0.38763119799999995 :
+    //  sep17 and (dayofmonth == 26) ?  0.389115935 :
+    //  sep17 and (dayofmonth == 27) ?  0.402368126 :
+    //  sep17 and (dayofmonth == 28) ?  0.403038732 :
+    //  sep17 and (dayofmonth == 29) ?  0.40052766700000003 :
+    //  oct17 and (dayofmonth == 2) ?  0.40600508399999996 :
+    //  oct17 and (dayofmonth == 3) ?  0.403984125 :
+    //  oct17 and (dayofmonth == 4) ?  0.39693980799999995 :
+    //  oct17 and (dayofmonth == 5) ?  0.404193997 :
+    //  oct17 and (dayofmonth == 6) ?  0.43149123899999997 :
+    //  oct17 and (dayofmonth == 9) ?  0.406523453 :
+    //  oct17 and (dayofmonth == 10) ?  0.40430670399999996 :
+    //  oct17 and (dayofmonth == 11) ?  0.41002057799999997 :
+    //  oct17 and (dayofmonth == 12) ?  0.39599842399999996 :
+    //  oct17 and (dayofmonth == 13) ?  0.37959673200000005 :
+    //  oct17 and (dayofmonth == 16) ?  0.38531509 :
+    //  oct17 and (dayofmonth == 17) ?  0.401742273 :
+    //  oct17 and (dayofmonth == 18) ?  0.39712849899999997 :
+    //  oct17 and (dayofmonth == 19) ?  0.405627869 :
+    //  oct17 and (dayofmonth == 20) ?  0.397406208 :
+    //  oct17 and (dayofmonth == 23) ?  0.39410779100000004 :
+    //  oct17 and (dayofmonth == 24) ?  0.37904856299999995 :
+    //  oct17 and (dayofmonth == 25) ?  0.40820470299999995 :
+    //  oct17 and (dayofmonth == 26) ?  0.38588221 :
+    //  oct17 and (dayofmonth == 27) ?  0.37321696600000004 :
+    //  oct17 and (dayofmonth == 30) ?  0.39725751299999995 :
+    //  oct17 and (dayofmonth == 31) ?  0.404548927 :
+    //  nov17 and (dayofmonth == 1) ?  0.404969574 :
+    //  nov17 and (dayofmonth == 2) ?  0.41991359 :
+    //  nov17 and (dayofmonth == 3) ?  0.409575791 :
+    //  nov17 and (dayofmonth == 6) ?  0.413734141 :
+    //  nov17 and (dayofmonth == 7) ?  0.42456019700000003 :
+    //  nov17 and (dayofmonth == 8) ?  0.393730275 :
+    //  nov17 and (dayofmonth == 9) ?  0.38947284600000004 :
+    //  nov17 and (dayofmonth == 10) ?  0.37356908 :
+    //  nov17 and (dayofmonth == 13) ?  0.37116031 :
+    //  nov17 and (dayofmonth == 14) ?  0.352842816 :
+    //  nov17 and (dayofmonth == 15) ?  0.350469432 :
+    //  nov17 and (dayofmonth == 16) ?  0.356192247 :
+    //  nov17 and (dayofmonth == 17) ?  0.38537124799999994 :
+    //  nov17 and (dayofmonth == 20) ?  0.341090094 :
+    //  nov17 and (dayofmonth == 21) ?  0.34263160200000004 :
+    //  nov17 and (dayofmonth == 22) ?  0.360925968 :
+    //  nov17 and (dayofmonth == 24) ?  0.338535756 :
+    //  nov17 and (dayofmonth == 27) ?  0.36085881200000003 :
+    //  nov17 and (dayofmonth == 28) ?  0.34046148200000004 :
+    //  nov17 and (dayofmonth == 29) ?  0.34660824799999995 :
+    //  nov17 and (dayofmonth == 30) ?  0.35045639100000003 :
+    //  dec17 and (dayofmonth == 1) ?  0.384371096 :
+    //  dec17 and (dayofmonth == 4) ?  0.354491545 :
+    //  dec17 and (dayofmonth == 5) ?  0.35684237399999996 :
+    //  dec17 and (dayofmonth == 6) ?  0.36603259999999993 :
+    //  dec17 and (dayofmonth == 7) ?  0.360674045 :
+    //  dec17 and (dayofmonth == 8) ?  0.361940858 :
+    //  dec17 and (dayofmonth == 11) ?  0.35835012299999996 :
+    //  dec17 and (dayofmonth == 12) ?  0.359852995 :
+    //  dec17 and (dayofmonth == 13) ?  0.353006855 :
+    //  dec17 and (dayofmonth == 14) ?  0.359296639 :
+    //  dec17 and (dayofmonth == 15) ?  0.35207941 :
+    //  dec17 and (dayofmonth == 18) ?  0.352538048 :
+    //  dec17 and (dayofmonth == 19) ?  0.342625974 :
+    //  dec17 and (dayofmonth == 20) ?  0.375862849 :
+    //  dec17 and (dayofmonth == 21) ?  0.366569286 :
+    //  dec17 and (dayofmonth == 22) ?  0.383272716 :
+    //  dec17 and (dayofmonth == 26) ?  0.398047583 :
+    //  dec17 and (dayofmonth == 27) ?  0.356079325 :
+    //  dec17 and (dayofmonth == 28) ?  0.37043612200000003 :
+    //  dec17 and (dayofmonth == 29) ?  0.391725726 :
+    //  jan18 and (dayofmonth == 2) ?  0.35865942700000003 :
+    //  jan18 and (dayofmonth == 3) ?  0.36173135 :
+    //  jan18 and (dayofmonth == 4) ?  0.379651787 :
+    //  jan18 and (dayofmonth == 5) ?  0.37649258700000005 :
+    //  jan18 and (dayofmonth == 8) ?  0.382067355 :
+    //  jan18 and (dayofmonth == 9) ?  0.376747911 :
+    //  jan18 and (dayofmonth == 10) ?  0.380225896 :
+    //  jan18 and (dayofmonth == 11) ?  0.360009055 :
+    //  jan18 and (dayofmonth == 12) ?  0.38057788299999995 :
+    //  jan18 and (dayofmonth == 16) ?  0.372070203 :
+    //  jan18 and (dayofmonth == 17) ?  0.36079103100000004 :
+    //  jan18 and (dayofmonth == 18) ?  0.360226916 :
+    //  jan18 and (dayofmonth == 19) ?  0.364108703 :
+    //  jan18 and (dayofmonth == 22) ?  0.3305551 :
+    //  jan18 and (dayofmonth == 23) ?  0.354173705 :
+    //  jan18 and (dayofmonth == 24) ?  0.35370289200000005 :
+    //  jan18 and (dayofmonth == 25) ?  0.35221028200000004 :
+    //  jan18 and (dayofmonth == 26) ?  0.339765572 :
+    //  jan18 and (dayofmonth == 29) ?  0.35452199100000004 :
+    //  jan18 and (dayofmonth == 30) ?  0.341564501 :
+    //  jan18 and (dayofmonth == 31) ?  0.362764087 :
+    //  feb18 and (dayofmonth == 1) ?  0.360813899 :
+    //  feb18 and (dayofmonth == 2) ?  0.37062545799999996 :
+    //  feb18 and (dayofmonth == 5) ?  0.37931884899999996 :
+    //  feb18 and (dayofmonth == 6) ?  0.41881313299999995 :
+    //  feb18 and (dayofmonth == 7) ?  0.39275488799999997 :
+    //  feb18 and (dayofmonth == 8) ?  0.42243476700000004 :
+    //  feb18 and (dayofmonth == 9) ?  0.398705388 :
+    //  feb18 and (dayofmonth == 12) ?  0.417383561 :
+    //  feb18 and (dayofmonth == 13) ?  0.41346859799999996 :
+    //  feb18 and (dayofmonth == 14) ?  0.409501864 :
+    //  feb18 and (dayofmonth == 15) ?  0.40773920700000005 :
+    //  feb18 and (dayofmonth == 16) ?  0.39786457700000005 :
+    //  feb18 and (dayofmonth == 20) ?  0.393641156 :
+    //  feb18 and (dayofmonth == 21) ?  0.418555325 :
+    //  feb18 and (dayofmonth == 22) ?  0.408430623 :
+    //  feb18 and (dayofmonth == 23) ?  0.38843945700000004 :
+    //  feb18 and (dayofmonth == 26) ?  0.369524794 :
+    //  feb18 and (dayofmonth == 27) ?  0.400323961 :
+    //  feb18 and (dayofmonth == 28) ?  0.39930316 :
+    //  mar18 and (dayofmonth == 1) ?  0.424326187 :
+    //  mar18 and (dayofmonth == 2) ?  0.412245454 :
+    //  mar18 and (dayofmonth == 5) ?  0.398803395 :
+    //  mar18 and (dayofmonth == 6) ?  0.420584869 :
+    //  mar18 and (dayofmonth == 7) ?  0.432697616 :
+    //  mar18 and (dayofmonth == 8) ?  0.409719595 :
+    //  mar18 and (dayofmonth == 9) ?  0.386553706 :
+    //  mar18 and (dayofmonth == 12) ?  0.435474989 :
+    //  mar18 and (dayofmonth == 13) ?  0.441725926 :
+    //  mar18 and (dayofmonth == 14) ?  0.436696866 :
+    //  mar18 and (dayofmonth == 15) ?  0.410976624 :
+    //  mar18 and (dayofmonth == 16) ?  0.406716742 :
+    //  mar18 and (dayofmonth == 19) ?  0.429742542 :
+    //  mar18 and (dayofmonth == 20) ?  0.40645981200000003 :
+    //  mar18 and (dayofmonth == 21) ?  0.41860796899999997 :
+    //  mar18 and (dayofmonth == 22) ?  0.421783003 :
+    //  mar18 and (dayofmonth == 23) ?  0.43350922799999997 :
+    //  mar18 and (dayofmonth == 26) ?  0.425434076 :
+    //  mar18 and (dayofmonth == 27) ?  0.44723773899999997 :
+    //  mar18 and (dayofmonth == 28) ?  0.43599267 :
+    //  mar18 and (dayofmonth == 29) ?  0.421633445 :
+    //  apr18 and (dayofmonth == 2) ?  0.454455228 :
+    //  apr18 and (dayofmonth == 3) ?  0.432859386 :
+    //  apr18 and (dayofmonth == 4) ?  0.42661706899999996 :
+    //  apr18 and (dayofmonth == 5) ?  0.426213889 :
+    //  apr18 and (dayofmonth == 6) ?  0.47709759399999996 :
+    //  apr18 and (dayofmonth == 9) ?  0.41135719 :
+    //  apr18 and (dayofmonth == 10) ?  0.438804874 :
+    //  apr18 and (dayofmonth == 11) ?  0.454881145 :
+    //  apr18 and (dayofmonth == 12) ?  0.43653794100000004 :
+    //  apr18 and (dayofmonth == 13) ?  0.440381254 :
+    //  apr18 and (dayofmonth == 16) ?  0.420742579 :
+    //  apr18 and (dayofmonth == 17) ?  0.414632038 :
+    //  apr18 and (dayofmonth == 18) ?  0.418295491 :
+    //  apr18 and (dayofmonth == 19) ?  0.435713984 :
+    //  apr18 and (dayofmonth == 20) ?  0.431034019 :
+    //  apr18 and (dayofmonth == 23) ?  0.42014308200000006 :
+    //  apr18 and (dayofmonth == 24) ?  0.44912198200000003 :
+    //  apr18 and (dayofmonth == 25) ?  0.45221259700000005 :
+    //  apr18 and (dayofmonth == 26) ?  0.432441287 :
+    //  apr18 and (dayofmonth == 27) ?  0.414847136 :
+    //  apr18 and (dayofmonth == 30) ?  0.42668688 :
+    //  may18 and (dayofmonth == 1) ?  0.43025656 :
+    //  may18 and (dayofmonth == 2) ?  0.418075286 :
+    //  may18 and (dayofmonth == 3) ?  0.422479602 :
+    //  may18 and (dayofmonth == 4) ?  0.423300767 :
+    //  may18 and (dayofmonth == 7) ?  0.42029445299999996 :
+    //  may18 and (dayofmonth == 8) ?  0.42766865600000004 :
+    //  may18 and (dayofmonth == 9) ?  0.41302231799999994 :
+    //  may18 and (dayofmonth == 10) ?  0.426655834 :
+    //  may18 and (dayofmonth == 11) ?  0.416560065 :
+    //  may18 and (dayofmonth == 14) ?  0.43068105700000003 :
+    //  may18 and (dayofmonth == 15) ?  0.442138769 :
+    //  may18 and (dayofmonth == 16) ?  0.42299572799999996 :
+    //  may18 and (dayofmonth == 17) ?  0.44427213600000004 :
+    //  may18 and (dayofmonth == 18) ?  0.42684213 :
+    //  may18 and (dayofmonth == 21) ?  0.426560314 :
+    //  may18 and (dayofmonth == 22) ?  0.43223261799999996 :
+    //  may18 and (dayofmonth == 23) ?  0.43913683 :
+    //  may18 and (dayofmonth == 24) ?  0.449490614 :
+    //  may18 and (dayofmonth == 25) ?  0.430207364 :
+    //  may18 and (dayofmonth == 29) ?  0.451674585 :
+    //  may18 and (dayofmonth == 30) ?  0.41544526 :
+    //  may18 and (dayofmonth == 31) ?  0.446178718 :
+    //  jun18 and (dayofmonth == 1) ?  0.427262669 :
+    //  jun18 and (dayofmonth == 4) ?  0.42365430299999995 :
+    //  jun18 and (dayofmonth == 5) ?  0.444178026 :
+     jun18 and (dayofmonth == 6) ?  0.417672905 :
+     jun18 and (dayofmonth == 7) ?  0.434915996 :
+     jun18 and (dayofmonth == 8) ?  0.44366065299999996 :
+     jun18 and (dayofmonth == 11) ?  0.42797650600000003 :
+     jun18 and (dayofmonth == 12) ?  0.410424096 :
+     jun18 and (dayofmonth == 13) ?  0.451950466 :
+     jun18 and (dayofmonth == 14) ?  0.444742874 :
+     jun18 and (dayofmonth == 15) ?  0.438161526 :
+     jun18 and (dayofmonth == 18) ?  0.42701749200000005 :
+     jun18 and (dayofmonth == 19) ?  0.435070909 :
+     jun18 and (dayofmonth == 20) ?  0.43689466 :
+     jun18 and (dayofmonth == 21) ?  0.44374483200000003 :
+     jun18 and (dayofmonth == 22) ?  0.40971690200000005 :
+     jun18 and (dayofmonth == 25) ?  0.43498132 :
+     jun18 and (dayofmonth == 26) ?  0.430593943 :
+     jun18 and (dayofmonth == 27) ?  0.44638223200000005 :
+     jun18 and (dayofmonth == 28) ?  0.43532602299999995 :
+     jun18 and (dayofmonth == 29) ?  0.43399053299999996 :
+     jul18 and (dayofmonth == 2) ?  0.432672165 :
+     jul18 and (dayofmonth == 3) ?  0.43065009200000004 :
+     jul18 and (dayofmonth == 5) ?  0.436160935 :
+     jul18 and (dayofmonth == 6) ?  0.415793794 :
+     jul18 and (dayofmonth == 9) ?  0.43809445799999996 :
+     jul18 and (dayofmonth == 10) ?  0.423025795 :
+     jul18 and (dayofmonth == 11) ?  0.43427786700000004 :
+     jul18 and (dayofmonth == 12) ?  0.407567919 :
+     jul18 and (dayofmonth == 13) ?  0.424010115 :
+     jul18 and (dayofmonth == 16) ?  0.43419558799999997 :
+     jul18 and (dayofmonth == 17) ?  0.455126761 :
+     jul18 and (dayofmonth == 18) ?  0.41878725899999997 :
+     jul18 and (dayofmonth == 19) ?  0.44008142299999997 :
+     jul18 and (dayofmonth == 20) ?  0.42474073700000003 :
+     jul18 and (dayofmonth == 23) ?  0.40685552399999997 :
+     jul18 and (dayofmonth == 24) ?  0.404956366 :
+     jul18 and (dayofmonth == 25) ?  0.411537924 :
+     jul18 and (dayofmonth == 26) ?  0.39965323399999997 :
+     jul18 and (dayofmonth == 27) ?  0.39981323399999996 :
+     jul18 and (dayofmonth == 30) ?  0.39528782100000004 :
+     jul18 and (dayofmonth == 31) ?  0.40088937399999997 :
+     aug18 and (dayofmonth == 1) ?  0.40921678100000003 :
+     aug18 and (dayofmonth == 2) ?  0.39440339799999996 :
+     aug18 and (dayofmonth == 3) ?  0.411971174 :
+     aug18 and (dayofmonth == 6) ?  0.40229630200000005 :
+     aug18 and (dayofmonth == 7) ?  0.39906205 :
+     aug18 and (dayofmonth == 8) ?  0.402708789 :
+     aug18 and (dayofmonth == 9) ?  0.40707874299999997 :
+     aug18 and (dayofmonth == 10) ?  0.422790007 :
+     aug18 and (dayofmonth == 13) ?  0.42032490200000006 :
+     aug18 and (dayofmonth == 14) ?  0.40822295700000005 :
+     aug18 and (dayofmonth == 15) ?  0.420970935 :
+     aug18 and (dayofmonth == 16) ?  0.38917755299999995 :
+     aug18 and (dayofmonth == 17) ?  0.41584158600000004 :
+     aug18 and (dayofmonth == 20) ?  0.402199631 :
+     aug18 and (dayofmonth == 21) ?  0.401938096 :
+     aug18 and (dayofmonth == 22) ?  0.402945815 :
+     aug18 and (dayofmonth == 23) ?  0.402500395 :
+     aug18 and (dayofmonth == 24) ?  0.39291943 :
+     aug18 and (dayofmonth == 27) ?  0.395960318 :
+     aug18 and (dayofmonth == 28) ?  0.40243437 :
+     aug18 and (dayofmonth == 29) ?  0.410019597 :
+     aug18 and (dayofmonth == 30) ?  0.428323312 :
+     aug18 and (dayofmonth == 31) ?  0.42585206299999995 :
+     sep18 and (dayofmonth == 4) ?  0.40793481 :
+     sep18 and (dayofmonth == 5) ?  0.393477664 :
+     sep18 and (dayofmonth == 6) ?  0.391742625 :
+     sep18 and (dayofmonth == 7) ?  0.415157525 :
+     sep18 and (dayofmonth == 10) ?  0.426191806 :
+     sep18 and (dayofmonth == 11) ?  0.38512701200000005 :
+     sep18 and (dayofmonth == 12) ?  0.412938015 :
+     sep18 and (dayofmonth == 13) ?  0.403668231 :
+     sep18 and (dayofmonth == 14) ?  0.39279046700000003 :
+     sep18 and (dayofmonth == 17) ?  0.42565617899999997 :
+     sep18 and (dayofmonth == 18) ?  0.394042575 :
+     sep18 and (dayofmonth == 19) ?  0.389525072 :
+     sep18 and (dayofmonth == 20) ?  0.401492019 :
+     sep18 and (dayofmonth == 21) ?  0.42921204399999996 :
+     sep18 and (dayofmonth == 24) ?  0.39062303 :
+     sep18 and (dayofmonth == 25) ?  0.385310682 :
+     sep18 and (dayofmonth == 26) ?  0.39764812299999996 :
+     sep18 and (dayofmonth == 27) ?  0.373774791 :
+     sep18 and (dayofmonth == 28) ?  0.397763054 :
+     oct18 and (dayofmonth == 1) ?  0.381175934 :
+     oct18 and (dayofmonth == 2) ?  0.399148733 :
+     oct18 and (dayofmonth == 3) ?  0.411943005 :
+     oct18 and (dayofmonth == 4) ?  0.411822955 :
+     oct18 and (dayofmonth == 5) ?  0.397385538 :
+     oct18 and (dayofmonth == 8) ?  0.38063109100000003 :
+     oct18 and (dayofmonth == 9) ?  0.39360115700000003 :
+     oct18 and (dayofmonth == 10) ?  0.399704135 :
+     oct18 and (dayofmonth == 11) ?  0.39536758 :
+     oct18 and (dayofmonth == 12) ?  0.434084808 :
+     oct18 and (dayofmonth == 15) ?  0.418943839 :
+     oct18 and (dayofmonth == 16) ?  0.38910406 :
+     oct18 and (dayofmonth == 17) ?  0.414719629 :
+     oct18 and (dayofmonth == 18) ?  0.414964385 :
+     oct18 and (dayofmonth == 19) ?  0.41511105 :
+     oct18 and (dayofmonth == 22) ?  0.400998336 :
+     oct18 and (dayofmonth == 23) ?  0.396488374 :
+     oct18 and (dayofmonth == 24) ?  0.427342485 :
+     oct18 and (dayofmonth == 25) ?  0.401267065 :
+     oct18 and (dayofmonth == 26) ?  0.413576734 :
+     oct18 and (dayofmonth == 29) ?  0.39875310700000005 :
+     oct18 and (dayofmonth == 30) ?  0.382259245 :
+     oct18 and (dayofmonth == 31) ?  0.41364742600000004 :
+     nov18 and (dayofmonth == 1) ?  0.412549148 :
+     nov18 and (dayofmonth == 2) ?  0.44635098100000004 :
+     nov18 and (dayofmonth == 5) ?  0.393047174 :
+     nov18 and (dayofmonth == 6) ?  0.40523664 :
+     nov18 and (dayofmonth == 7) ?  0.397721008 :
+     nov18 and (dayofmonth == 8) ?  0.40862463200000004 :
+     nov18 and (dayofmonth == 9) ?  0.40663392 :
+     nov18 and (dayofmonth == 12) ?  0.40369659799999996 :
+     nov18 and (dayofmonth == 13) ?  0.411928213 :
+     nov18 and (dayofmonth == 14) ?  0.40089582700000004 :
+     nov18 and (dayofmonth == 15) ?  0.406066295 :
+     nov18 and (dayofmonth == 16) ?  0.41374447200000003 :
+     nov18 and (dayofmonth == 19) ?  0.37624830200000003 :
+     nov18 and (dayofmonth == 20) ?  0.382089634 :
+     nov18 and (dayofmonth == 21) ?  0.41751366700000003 :
+     nov18 and (dayofmonth == 23) ?  0.423969072 :
+     nov18 and (dayofmonth == 26) ?  0.413214485 :
+     nov18 and (dayofmonth == 27) ?  0.404161737 :
+     nov18 and (dayofmonth == 28) ?  0.432847198 :
+     nov18 and (dayofmonth == 29) ?  0.439272809 :
+     nov18 and (dayofmonth == 30) ?  0.433296919 :
+     dec18 and (dayofmonth == 3) ?  0.40400202700000004 :
+     dec18 and (dayofmonth == 4) ?  0.42129874799999995 :
+     dec18 and (dayofmonth == 6) ?  0.40780820100000004 :
+     dec18 and (dayofmonth == 7) ?  0.435783815 :
+     dec18 and (dayofmonth == 10) ?  0.378044376 :
+     dec18 and (dayofmonth == 11) ?  0.402324685 :
+     dec18 and (dayofmonth == 12) ?  0.38792065600000003 :
+     dec18 and (dayofmonth == 13) ?  0.402136124 :
+     dec18 and (dayofmonth == 14) ?  0.40652618100000004 :
+     dec18 and (dayofmonth == 17) ?  0.402537916 :
+     dec18 and (dayofmonth == 18) ?  0.410975259 :
+     dec18 and (dayofmonth == 19) ?  0.437996335 :
+     dec18 and (dayofmonth == 20) ?  0.414743705 :
+     dec18 and (dayofmonth == 21) ?  0.409249362 :
+     dec18 and (dayofmonth == 24) ?  0.4277407999999999 :
+     dec18 and (dayofmonth == 26) ?  0.45510742 :
+     dec18 and (dayofmonth == 27) ?  0.471026396 :
+     dec18 and (dayofmonth == 28) ?  0.450825639 :
+     dec18 and (dayofmonth == 31) ?  0.44722316700000003 :
+     jan19 and (dayofmonth == 2) ?  0.48225869600000004 :
+     jan19 and (dayofmonth == 3) ?  0.462776787 :
+     jan19 and (dayofmonth == 4) ?  0.44392220299999996 :
+     jan19 and (dayofmonth == 7) ?  0.453709563 :
+     jan19 and (dayofmonth == 8) ?  0.451862996 :
+     jan19 and (dayofmonth == 9) ?  0.466265795 :
+     jan19 and (dayofmonth == 10) ?  0.45292748899999996 :
+     jan19 and (dayofmonth == 11) ?  0.461464175 :
+     jan19 and (dayofmonth == 14) ?  0.45922926 :
+     jan19 and (dayofmonth == 15) ?  0.456361952 :
+     jan19 and (dayofmonth == 16) ?  0.457716246 :
+     jan19 and (dayofmonth == 17) ?  0.46812024799999996 :
+     jan19 and (dayofmonth == 18) ?  0.457520395 :
+     jan19 and (dayofmonth == 22) ?  0.428778292 :
+     jan19 and (dayofmonth == 23) ?  0.431434087 :
+     jan19 and (dayofmonth == 24) ?  0.429370573 :
+     jan19 and (dayofmonth == 25) ?  0.417002273 :
+     jan19 and (dayofmonth == 28) ?  0.433483018 :
+     jan19 and (dayofmonth == 29) ?  0.423230404 :
+     jan19 and (dayofmonth == 30) ?  0.43094706 :
+     jan19 and (dayofmonth == 31) ?  0.41791673700000004 :
+     feb19 and (dayofmonth == 1) ?  0.432837679 :
+     feb19 and (dayofmonth == 4) ?  0.427349142 :
+     feb19 and (dayofmonth == 5) ?  0.434037726 :
+     feb19 and (dayofmonth == 6) ?  0.4406807 :
+     feb19 and (dayofmonth == 7) ?  0.449229455 :
+     feb19 and (dayofmonth == 8) ?  0.444657974 :
+     feb19 and (dayofmonth == 11) ?  0.410361816 :
+     feb19 and (dayofmonth == 12) ?  0.41097392 :
+     feb19 and (dayofmonth == 13) ?  0.429148793 :
+     feb19 and (dayofmonth == 14) ?  0.44933046600000004 :
+     feb19 and (dayofmonth == 15) ?  0.41925997600000003 :
+     feb19 and (dayofmonth == 19) ?  0.405681499 :
+     feb19 and (dayofmonth == 20) ?  0.43382961700000006 :
+     feb19 and (dayofmonth == 21) ?  0.435948105 :
+     feb19 and (dayofmonth == 22) ?  0.41460831200000003 :
+     feb19 and (dayofmonth == 25) ?  0.402778491 :
+     feb19 and (dayofmonth == 26) ?  0.436199933 :
+     feb19 and (dayofmonth == 27) ?  0.436160933 :
+     feb19 and (dayofmonth == 28) ?  0.428611109 :
+     mar19 and (dayofmonth == 1) ?  0.432004735 :
+     mar19 and (dayofmonth == 4) ?  0.42542436200000006 :
+     mar19 and (dayofmonth == 5) ?  0.425534895 :
+     mar19 and (dayofmonth == 6) ?  0.48217492100000003 :
+     mar19 and (dayofmonth == 7) ?  0.477602121 :
+     mar19 and (dayofmonth == 8) ?  0.453461438 :
+     mar19 and (dayofmonth == 11) ?  0.44354975700000004 :
+     mar19 and (dayofmonth == 12) ?  0.450529439 :
+     mar19 and (dayofmonth == 13) ?  0.432314464 :
+     mar19 and (dayofmonth == 14) ?  0.43150121 :
+     mar19 and (dayofmonth == 15) ?  0.437207485 :
+     mar19 and (dayofmonth == 18) ?  0.43665151700000004 :
+     mar19 and (dayofmonth == 19) ?  0.442802321 :
+     mar19 and (dayofmonth == 20) ?  0.46411351 :
+     mar19 and (dayofmonth == 21) ?  0.44135919700000004 :
+     mar19 and (dayofmonth == 22) ?  0.44534043700000003 :
+     mar19 and (dayofmonth == 25) ?  0.43485832399999996 :
+     mar19 and (dayofmonth == 26) ?  0.418150375 :
+     mar19 and (dayofmonth == 27) ?  0.425702965 :
+     mar19 and (dayofmonth == 28) ?  0.420447564 :
+     mar19 and (dayofmonth == 29) ?  0.429682237 :
+     apr19 and (dayofmonth == 1) ?  0.400000205 :
+     apr19 and (dayofmonth == 2) ?  0.41067695 :
+     apr19 and (dayofmonth == 3) ?  0.396498523 :
+     apr19 and (dayofmonth == 4) ?  0.413460615 :
+     apr19 and (dayofmonth == 5) ?  0.400739867 :
+     apr19 and (dayofmonth == 8) ?  0.438380785 :
+     apr19 and (dayofmonth == 9) ?  0.43783616299999994 :
+     apr19 and (dayofmonth == 10) ?  0.41668393 :
+     apr19 and (dayofmonth == 11) ?  0.413329909 :
+     apr19 and (dayofmonth == 12) ?  0.412939371 :
+     apr19 and (dayofmonth == 15) ?  0.400960981 :
+     apr19 and (dayofmonth == 16) ?  0.40112108799999996 :
+     apr19 and (dayofmonth == 17) ?  0.40264799 :
+     apr19 and (dayofmonth == 18) ?  0.40754587299999995 :
+     apr19 and (dayofmonth == 22) ?  0.40342216 :
+     apr19 and (dayofmonth == 23) ?  0.396442171 :
+     apr19 and (dayofmonth == 24) ?  0.415219775 :
+     apr19 and (dayofmonth == 25) ?  0.432309214 :
+     apr19 and (dayofmonth == 26) ?  0.414497149 :
+     apr19 and (dayofmonth == 29) ?  0.394485934 :
+     apr19 and (dayofmonth == 30) ?  0.39271393200000004 :
+     may19 and (dayofmonth == 1) ?  0.4075884 :
+     may19 and (dayofmonth == 2) ?  0.40926483 :
+     may19 and (dayofmonth == 3) ?  0.382392165 :
+     may19 and (dayofmonth == 6) ?  0.415698963 :
+     may19 and (dayofmonth == 7) ?  0.421404228 :
+     may19 and (dayofmonth == 8) ?  0.41067080799999994 :
+     may19 and (dayofmonth == 9) ?  0.410291006 :
+     may19 and (dayofmonth == 10) ?  0.42349258700000003 :
+     may19 and (dayofmonth == 13) ?  0.419037384 :
+     may19 and (dayofmonth == 14) ?  0.42042380700000004 :
+     may19 and (dayofmonth == 15) ?  0.41939756899999997 :
+     may19 and (dayofmonth == 16) ?  0.440078359 :
+     may19 and (dayofmonth == 17) ?  0.463386323 :
+     may19 and (dayofmonth == 20) ?  0.419201906 :
+     may19 and (dayofmonth == 21) ?  0.424296424 :
+     may19 and (dayofmonth == 22) ?  0.42702913 :
+     may19 and (dayofmonth == 23) ?  0.43448933700000003 :
+     may19 and (dayofmonth == 24) ?  0.44353332100000004 :
+     may19 and (dayofmonth == 28) ?  0.43376222299999995 :
+     may19 and (dayofmonth == 29) ?  0.43687532700000004 :
+     may19 and (dayofmonth == 30) ?  0.44236486399999997 :
+     may19 and (dayofmonth == 31) ?  0.45502505600000004 :
+     jun19 and (dayofmonth == 3) ?  0.42922209200000006 :
+     jun19 and (dayofmonth == 4) ?  0.44423487899999997 :
+     jun19 and (dayofmonth == 5) ?  0.436803468 :
+     jun19 and (dayofmonth == 6) ?  0.42573206399999997 :
+     jun19 and (dayofmonth == 7) ?  0.41933066 :
+     jun19 and (dayofmonth == 10) ?  0.42900463 :
+     jun19 and (dayofmonth == 11) ?  0.427217653 :
+     jun19 and (dayofmonth == 12) ?  0.43042442299999994 :
+     jun19 and (dayofmonth == 13) ?  0.441994955 :
+     jun19 and (dayofmonth == 14) ?  0.434904775 :
+     jun19 and (dayofmonth == 17) ?  0.408897199 :
+     jun19 and (dayofmonth == 18) ?  0.375277305 :
+     jun19 and (dayofmonth == 19) ?  0.400692682 :
+     jun19 and (dayofmonth == 20) ?  0.426389029 :
+     jun19 and (dayofmonth == 21) ?  0.42615587899999996 :
+     jun19 and (dayofmonth == 24) ?  0.43361893799999995 :
+     jun19 and (dayofmonth == 25) ?  0.397518563 :
+     jun19 and (dayofmonth == 26) ?  0.408467625 :
+     jun19 and (dayofmonth == 27) ?  0.403991135 :
+     jun19 and (dayofmonth == 28) ?  0.39768475700000006 :
+     jul19 and (dayofmonth == 1) ?  0.404680976 :
+     jul19 and (dayofmonth == 2) ?  0.413374381 :
+     jul19 and (dayofmonth == 3) ?  0.369263722 :
+     jul19 and (dayofmonth == 5) ?  0.42907455200000005 :
+     jul19 and (dayofmonth == 8) ?  0.394299579 :
+     jul19 and (dayofmonth == 9) ?  0.39500827299999997 :
+     jul19 and (dayofmonth == 10) ?  0.38687967100000004 :
+     jul19 and (dayofmonth == 11) ?  0.38805841799999996 :
+     jul19 and (dayofmonth == 12) ?  0.395606116 :
+     jul19 and (dayofmonth == 15) ?  0.392037505 :
+     jul19 and (dayofmonth == 16) ?  0.378023375 :
+     jul19 and (dayofmonth == 17) ?  0.408526459 :
+     jul19 and (dayofmonth == 18) ?  0.42013580700000003 :
+     jul19 and (dayofmonth == 19) ?  0.43792443299999995 :
+     jul19 and (dayofmonth == 22) ?  0.424543477 :
+     jul19 and (dayofmonth == 23) ?  0.418681972 :
+     jul19 and (dayofmonth == 24) ?  0.406972537 :
+     jul19 and (dayofmonth == 25) ?  0.44073527799999995 :
+     jul19 and (dayofmonth == 26) ?  0.430797515 :
+     jul19 and (dayofmonth == 29) ?  0.393661143 :
+     jul19 and (dayofmonth == 30) ?  0.41465546 :
+     jul19 and (dayofmonth == 31) ?  0.427294977 :
+     aug19 and (dayofmonth == 1) ?  0.428041422 :
+     aug19 and (dayofmonth == 2) ?  0.429891885 :
+     aug19 and (dayofmonth == 5) ?  0.426661161 :
+     aug19 and (dayofmonth == 6) ?  0.436041591 :
+     aug19 and (dayofmonth == 7) ?  0.447901094 :
+     aug19 and (dayofmonth == 8) ?  0.423342348 :
+     aug19 and (dayofmonth == 9) ?  0.440176213 :
+     aug19 and (dayofmonth == 12) ?  0.424509545 :
+     aug19 and (dayofmonth == 13) ?  0.415325216 :
+     aug19 and (dayofmonth == 14) ?  0.453332226 :
+     aug19 and (dayofmonth == 15) ?  0.420817995 :
+     aug19 and (dayofmonth == 16) ?  0.42221415799999995 :
+     aug19 and (dayofmonth == 19) ?  0.408194915 :
+     aug19 and (dayofmonth == 20) ?  0.434719385 :
+     aug19 and (dayofmonth == 21) ?  0.411911517 :
+     aug19 and (dayofmonth == 22) ?  0.4255389 :
+     aug19 and (dayofmonth == 23) ?  0.468871117 :
+     aug19 and (dayofmonth == 26) ?  0.41862344100000004 :
+     aug19 and (dayofmonth == 27) ?  0.42335028 :
+     aug19 and (dayofmonth == 28) ?  0.420442895 :
+     aug19 and (dayofmonth == 29) ?  0.41304341299999997 :
+     aug19 and (dayofmonth == 30) ?  0.44089143 :
+     sep19 and (dayofmonth == 3) ?  0.441008835 :
+     sep19 and (dayofmonth == 4) ?  0.40388544 :
+     sep19 and (dayofmonth == 5) ?  0.40871515700000005 :
+     sep19 and (dayofmonth == 6) ?  0.41588554899999997 :
+     sep19 and (dayofmonth == 9) ?  0.42045629700000003 :
+     sep19 and (dayofmonth == 10) ?  0.41991744 :
+     sep19 and (dayofmonth == 11) ?  0.417609069 :
+     sep19 and (dayofmonth == 12) ?  0.42326620299999995 :
+     sep19 and (dayofmonth == 13) ?  0.42109208 :
+     sep19 and (dayofmonth == 16) ?  0.430683696 :
+     sep19 and (dayofmonth == 17) ?  0.43511733399999997 :
+     sep19 and (dayofmonth == 18) ?  0.45016868600000004 :
+     sep19 and (dayofmonth == 19) ?  0.44346152 :
+     sep19 and (dayofmonth == 20) ?  0.457076479 :
+     sep19 and (dayofmonth == 23) ?  0.42747883 :
+     sep19 and (dayofmonth == 24) ?  0.418510146 :
+     sep19 and (dayofmonth == 25) ?  0.40169905100000003 :
+     sep19 and (dayofmonth == 26) ?  0.405758698 :
+     sep19 and (dayofmonth == 27) ?  0.41731013899999997 :
+     sep19 and (dayofmonth == 30) ?  0.37582255 :
+     oct19 and (dayofmonth == 1) ?  0.395180335 :
+     oct19 and (dayofmonth == 2) ?  0.40643191700000003 :
+     oct19 and (dayofmonth == 3) ?  0.40861374899999997 :
+     oct19 and (dayofmonth == 4) ?  0.417775331 :
+     oct19 and (dayofmonth == 7) ?  0.407421336 :
+     oct19 and (dayofmonth == 8) ?  0.41754064399999996 :
+     oct19 and (dayofmonth == 9) ?  0.398611124 :
+     oct19 and (dayofmonth == 10) ?  0.41670447299999996 :
+     oct19 and (dayofmonth == 11) ?  0.402998043 :
+     oct19 and (dayofmonth == 14) ?  0.43489705100000003 :
+     oct19 and (dayofmonth == 15) ?  0.433857014 :
+     oct19 and (dayofmonth == 16) ?  0.405418215 :
+     oct19 and (dayofmonth == 17) ?  0.432070944 :
+     oct19 and (dayofmonth == 18) ?  0.428249881 :
+     oct19 and (dayofmonth == 21) ?  0.411886262 :
+     oct19 and (dayofmonth == 22) ?  0.42655242299999996 :
+     oct19 and (dayofmonth == 23) ?  0.41639290700000003 :
+     oct19 and (dayofmonth == 24) ?  0.422678902 :
+     oct19 and (dayofmonth == 25) ?  0.46280446399999997 :
+     oct19 and (dayofmonth == 28) ?  0.418665403 :
+     oct19 and (dayofmonth == 29) ?  0.42721093299999996 :
+     oct19 and (dayofmonth == 30) ?  0.441827252 :
+     oct19 and (dayofmonth == 31) ?  0.452065306 :
+     nov19 and (dayofmonth == 1) ?  0.43402003100000003 :
+     nov19 and (dayofmonth == 4) ?  0.410867463 :
+     nov19 and (dayofmonth == 5) ?  0.41190333 :
+     nov19 and (dayofmonth == 6) ?  0.397406659 :
+     nov19 and (dayofmonth == 7) ?  0.40025844299999996 :
+     nov19 and (dayofmonth == 8) ?  0.424019174 :
+     nov19 and (dayofmonth == 11) ?  0.435015219 :
+     nov19 and (dayofmonth == 12) ?  0.429752989 :
+     nov19 and (dayofmonth == 13) ?  0.442319536 :
+     nov19 and (dayofmonth == 14) ?  0.43120895600000003 :
+     nov19 and (dayofmonth == 15) ?  0.436792269 :
+     nov19 and (dayofmonth == 18) ?  0.42337045799999995 :
+     nov19 and (dayofmonth == 19) ?  0.422310301 :
+     nov19 and (dayofmonth == 20) ?  0.43513279999999993 :
+     nov19 and (dayofmonth == 21) ?  0.43133292 :
+     nov19 and (dayofmonth == 22) ?  0.417131246 :
+     nov19 and (dayofmonth == 25) ?  0.381546985 :
+     nov19 and (dayofmonth == 26) ?  0.390529917 :
+     nov19 and (dayofmonth == 27) ?  0.395141154 :
+     nov19 and (dayofmonth == 29) ?  0.42228433600000004 :
+     dec19 and (dayofmonth == 2) ?  0.406087015 :
+     dec19 and (dayofmonth == 3) ?  0.396628945 :
+     dec19 and (dayofmonth == 4) ?  0.399313531 :
+     dec19 and (dayofmonth == 5) ?  0.410275843 :
+     dec19 and (dayofmonth == 6) ?  0.41647991100000004 :
+     dec19 and (dayofmonth == 9) ?  0.407991969 :
+     dec19 and (dayofmonth == 10) ?  0.413869937 :
+     dec19 and (dayofmonth == 11) ?  0.426127152 :
+     dec19 and (dayofmonth == 12) ?  0.432924917 :
+     dec19 and (dayofmonth == 13) ?  0.470428479 :
+     dec19 and (dayofmonth == 16) ?  0.41280074899999997 :
+     dec19 and (dayofmonth == 17) ?  0.40553182299999996 :
+     dec19 and (dayofmonth == 18) ?  0.418749397 :
+     dec19 and (dayofmonth == 19) ?  0.45534069200000005 :
+     dec19 and (dayofmonth == 20) ?  0.46602796 :
+     dec19 and (dayofmonth == 23) ?  0.436724312 :
+     dec19 and (dayofmonth == 24) ?  0.478467628 :
+     dec19 and (dayofmonth == 26) ?  0.469282325 :
+     dec19 and (dayofmonth == 27) ?  0.433384331 :
+     dec19 and (dayofmonth == 30) ?  0.44163831600000003 :
+     dec19 and (dayofmonth == 31) ?  0.433969248 :
+     jan20 and (dayofmonth == 2) ?  0.428803072 :
+     jan20 and (dayofmonth == 3) ?  0.440180539 :
+     jan20 and (dayofmonth == 6) ?  0.401543172 :
+     jan20 and (dayofmonth == 7) ?  0.400915862 :
+     jan20 and (dayofmonth == 8) ?  0.38789662399999997 :
+     jan20 and (dayofmonth == 9) ?  0.410326563 :
+     jan20 and (dayofmonth == 10) ?  0.42833749 :
+     jan20 and (dayofmonth == 13) ?  0.413372762 :
+     jan20 and (dayofmonth == 14) ?  0.41614303700000005 :
+     jan20 and (dayofmonth == 15) ?  0.425518499 :
+     jan20 and (dayofmonth == 16) ?  0.42672737200000005 :
+     jan20 and (dayofmonth == 17) ?  0.438130213 :
+     jan20 and (dayofmonth == 21) ?  0.43171173 :
+     jan20 and (dayofmonth == 22) ?  0.43793836799999997 :
+     jan20 and (dayofmonth == 23) ?  0.43287996100000004 :
+     jan20 and (dayofmonth == 24) ?  0.45984461299999996 :
+     jan20 and (dayofmonth == 27) ?  0.424057009 :
+     jan20 and (dayofmonth == 28) ?  0.436453142 :
+     jan20 and (dayofmonth == 29) ?  0.44950097200000005 :
+     jan20 and (dayofmonth == 30) ?  0.437035116 :
+     jan20 and (dayofmonth == 31) ?  0.42456880799999996 :
+     feb20 and (dayofmonth == 3) ?  0.408135676 :
+     feb20 and (dayofmonth == 4) ?  0.389275776 :
+     feb20 and (dayofmonth == 5) ?  0.41036314700000004 :
+     feb20 and (dayofmonth == 6) ?  0.418594873 :
+     feb20 and (dayofmonth == 7) ?  0.430927906 :
+     feb20 and (dayofmonth == 10) ?  0.409941981 :
+     feb20 and (dayofmonth == 11) ?  0.42407349200000005 :
+     feb20 and (dayofmonth == 12) ?  0.408969195 :
+     feb20 and (dayofmonth == 13) ?  0.423862929 :
+     feb20 and (dayofmonth == 14) ?  0.432181529 :
+     feb20 and (dayofmonth == 18) ?  0.408374413 :
+     feb20 and (dayofmonth == 19) ?  0.416881131 :
+     feb20 and (dayofmonth == 20) ?  0.425312149 :
+     feb20 and (dayofmonth == 21) ?  0.420910095 :
+     feb20 and (dayofmonth == 24) ?  0.38121088299999994 :
+     feb20 and (dayofmonth == 25) ?  0.39385871 :
+     feb20 and (dayofmonth == 26) ?  0.398890185 :
+     feb20 and (dayofmonth == 27) ?  0.361877929 :
+     feb20 and (dayofmonth == 28) ?  0.380413312 :
+     mar20 and (dayofmonth == 2) ?  0.448495727 :
+     mar20 and (dayofmonth == 3) ?  0.45690516700000006 :
+     mar20 and (dayofmonth == 4) ?  0.420300314 :
+     mar20 and (dayofmonth == 5) ?  0.44253285 :
+     mar20 and (dayofmonth == 6) ?  0.45216180100000003 :
+     mar20 and (dayofmonth == 9) ?  0.41646493700000004 :
+     mar20 and (dayofmonth == 10) ?  0.41824976399999997 :
+     mar20 and (dayofmonth == 11) ?  0.43941468899999997 :
+     mar20 and (dayofmonth == 12) ?  0.377596444 :
+     mar20 and (dayofmonth == 13) ?  0.390935849 :
+     mar20 and (dayofmonth == 16) ?  0.372537161 :
+     mar20 and (dayofmonth == 17) ?  0.352457656 :
+     mar20 and (dayofmonth == 18) ?  0.35420916 :
+     mar20 and (dayofmonth == 19) ?  0.353334648 :
+     mar20 and (dayofmonth == 20) ?  0.41140384700000004 :
+     mar20 and (dayofmonth == 23) ?  0.3665711996579459 :
+     mar20 and (dayofmonth == 24) ?  0.40220784471872334 :
+     mar20 and (dayofmonth == 25) ?  0.4611852249864139 :
+     mar20 and (dayofmonth == 26) ?  0.4809410635531237 :
+     mar20 and (dayofmonth == 27) ?  0.482825712625796 :
+     mar20 and (dayofmonth == 30) ?  0.4727400191733636 :
+     mar20 and (dayofmonth == 31) ?  0.4974165798378229 :
+     apr20 and (dayofmonth == 1) ?  0.51140108308801 :
+     apr20 and (dayofmonth == 2) ?  0.4852214659749498 :
+     apr20 and (dayofmonth == 3) ?  0.5064751559582124 :
+     apr20 and (dayofmonth == 6) ?  0.4466981133829929 :
+     apr20 and (dayofmonth == 7) ?  0.4821102904797566 :
+     apr20 and (dayofmonth == 8) ?  0.5011144447015412 :
+     apr20 and (dayofmonth == 9) ?  0.4885742217850175 :
+     apr20 and (dayofmonth == 13) ?  0.493959663008928 :
+     apr20 and (dayofmonth == 14) ?  0.477697023227711 :
+     apr20 and (dayofmonth == 15) ?  0.5115120688053725 :
+     apr20 and (dayofmonth == 16) ?  0.5047362316697889 :
+     apr20 and (dayofmonth == 17) ?  0.4636443436908712 :
+     apr20 and (dayofmonth == 20) ?  0.4490465547333714 :
+     apr20 and (dayofmonth == 21) ?  0.4682908603841252 :
+     apr20 and (dayofmonth == 22) ?  0.4571858073227633 :
+     apr20 and (dayofmonth == 23) ?  0.4516551070063476 :
+     apr20 and (dayofmonth == 24) ?  0.4397585510685881 :
+     apr20 and (dayofmonth == 27) ?  0.4321319357552623 :
+     apr20 and (dayofmonth == 28) ?  0.4409439860377155 :
+     apr20 and (dayofmonth == 29) ?  0.4450376971365347 :
+     apr20 and (dayofmonth == 30) ?  0.4577286945699581 :
+     may20 and (dayofmonth == 1) ?  0.4830671741057962 :
+     may20 and (dayofmonth == 4) ?  0.4631966645770912 :
+     may20 and (dayofmonth == 5) ?  0.4545980040762348 :
+     may20 and (dayofmonth == 6) ?  0.4734736874403063 :
+     may20 and (dayofmonth == 7) ?  0.4572907287911437 :
+     may20 and (dayofmonth == 8) ?  0.4408165052079361 :
+     na  // default
+
+//DIX Line Plot
+plot(series=plotValue, title="DIX", linewidth=2, style=line, color=blue)
+
+//.45 threshold
+plot(.45, title=".45 Threshold", color=green, linewidth=1, style=line, transp=30)
+
+//DIX selectable SMA
+smaLength = input(3, minval=1)
+//calculating the DIX simple moving average
+DIXsma = sma(plotValue, smaLength)
+
+//DIX sma plot
+plot(DIXsma, title="DIX SMA", color=purple, linewidth = 1, style=line)
